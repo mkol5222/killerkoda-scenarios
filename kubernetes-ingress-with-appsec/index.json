@@ -7,8 +7,12 @@
     },
     "steps": [
       {
-        "title": "List all pods",
+        "title": "Check your new cluster",
         "text": "step1.md"
+      },
+      {
+        "title": "Deploy web app",
+        "text": "step2.md"
       }
     ],
     "finish": {
