@@ -6,7 +6,7 @@
       "text": "intro.md"
     },
     "assets": {
-      "controlplane": [
+      "host01": [
         {"file": "controller-statefulset.yaml.patch", "target": "/root/controller-statefulset.yaml.patch"}
       ]
     },
