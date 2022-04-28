@@ -15,8 +15,12 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Optional: see Service load balancing to Pods",
         "text": "step3.md"
+      },
+      {
+        "title": "Install helm",
+        "text": "step4.md"
       }
     ],
     "finish": {
