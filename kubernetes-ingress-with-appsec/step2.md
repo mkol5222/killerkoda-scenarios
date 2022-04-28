@@ -3,7 +3,9 @@
 
 ### Deploy web application
 
-Run `cat <<"EOF" | kubectl apply -f -
+Run 
+```
+cat <<"EOF" | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,12 +30,16 @@ spec:
        command: ["bash"]
        args: ["-c", 'echo "$(hostname)" "$(hostname -i)" > /usr/share/nginx/html/index.html; nginx -g "daemon off;"']
 EOF
-`{{exec}} to start web application where it is easy to see name and IP address of responding pod.
+```{{exec}} 
+to start web application where it is easy to see name and IP address of responding pod.
 
 And expose it with new Service  `kubectl expose deployment/web --type NodePort --port 80`{{exec}}
 
 Check our new service:
 `kubectl describe service web`{{exec}}
+
+Check it live
+{{TRAFFIC_SELECTOR}}
 
 
 
