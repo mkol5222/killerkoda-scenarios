@@ -3,7 +3,8 @@
 
 ### Prepare storage
 
-`mkdir /data; chmod 777 /data/`{{exec}}
+`mkdir /data1; chmod 777 /data1/`{{exec}}
+`mkdir /data2; chmod 777 /data2/`{{exec}}
 
 ```
 cat > storageClass.yaml << "EOF"
@@ -32,7 +33,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: my-local-storage
   local:
-    path: /data
+    path: /data1
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -60,7 +61,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: my-local-storage
   local:
-    path: /data
+    path: /data2
   nodeAffinity:
     required:
       nodeSelectorTerms:

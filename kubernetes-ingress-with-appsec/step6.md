@@ -18,4 +18,8 @@ Install
   --set controller.resources.requests.cpu="10m"
 ```{{exec}}
 
+Wait for controller to be Running
+`k get pod/cp-appsec-cpappsec-ingress-nginx-controller-0 --watch`{{exec}}
+
+
 
