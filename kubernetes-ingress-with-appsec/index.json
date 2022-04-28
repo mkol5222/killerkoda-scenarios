@@ -26,7 +26,20 @@
       {
         "title": "Install helm",
         "text": "step4.md"
+      },
+      {
+        "title": "Prepare storage",
+        "text": "step5.md"
+      },
+      {
+        "title": "Install with Helm",
+        "text": "step6.md"
+      },
+      {
+        "title": "Create Ingress",
+        "text": "step7.md"
       }
+
     ],
     "finish": {
       "text": "finish.md"
