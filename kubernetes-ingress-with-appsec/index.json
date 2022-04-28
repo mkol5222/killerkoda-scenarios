@@ -5,6 +5,11 @@
     "intro": {
       "text": "intro.md"
     },
+    "assets": {
+      "controlplane": [
+        {"file": "controller-statefulset.yaml.patch", "target": "/root/controller-statefulset.yaml.patch"}
+      ]
+    },
     "steps": [
       {
         "title": "Check your new cluster",

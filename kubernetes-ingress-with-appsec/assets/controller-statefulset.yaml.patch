@@ -1,0 +1,11 @@
+--- cpappsec/templates/controller-statefulset.yaml.orig 2022-04-28 12:27:29.243684582 +0000
++++ cpappsec/templates/controller-statefulset.yaml      2022-04-28 12:27:58.167204630 +0000
+@@ -68,7 +68,7 @@
+       containers:
+         - name: {{ .Values.controller.containerName }}
+           {{- with .Values.controller.image }}
+-          image: "{{- if .registry }}{{ .registry }}/{{- end }}{{- if .repository }}{{ .repository }}/{{- end }}{{ .image }}{{- if .tag }}:{{ .tag }}-1.16{{- end }}{{- if (.digest) -}} @{{.digest}} {{- end }}"
++          image: "{{- if .registry }}{{ .registry }}/{{- end }}{{- if .repository }}{{ .repository }}/{{- end }}{{ .image }}{{- if .tag }}:{{ .tag }}{{- end }}{{- if (.digest) -}} @{{.digest}} {{- end }}"
+           {{- end }}
+           imagePullPolicy: {{ .Values.controller.image.pullPolicy }}
+         {{- if .Values.controller.lifecycle }}
