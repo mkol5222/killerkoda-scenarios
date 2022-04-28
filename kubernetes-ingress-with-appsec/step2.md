@@ -38,7 +38,10 @@ And expose it with new Service  `kubectl expose deployment/web --type NodePort -
 Check our new service:
 `kubectl describe service web`{{exec}}
 
-Check it live
+Identify NodePort assigned to it on cluster's node IP address:
+`kubectl get svc web --output jsonpath={.spec.ports[*].nodePort}; echo`{{exec}}
+
+Check it live with NodePort from previous command. Refresh browser multiple times to see different Pods behind load balander (Service)
 {{TRAFFIC_SELECTOR}}
 
 
