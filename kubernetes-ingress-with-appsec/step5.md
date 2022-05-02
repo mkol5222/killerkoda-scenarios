@@ -3,8 +3,7 @@
 
 ### Prepare storage
 
-`mkdir /data1; chmod 777 /data1/`{{exec}}
-`mkdir /data2; chmod 777 /data2/`{{exec}}
+`mkdir /data1; chmod 777 /data1/; mkdir /data2; chmod 777 /data2/`{{exec}}
 
 ```
 cat > storageClass.yaml << "EOF"
