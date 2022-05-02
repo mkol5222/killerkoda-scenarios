@@ -7,7 +7,7 @@ Grab Helm chart
 `git clone https://github.com/mkol5222/appsec-helm-chart.git cpappsec`{{exec}}
 
 Get your agent token from Infinity Portal and set variable
-`export CP_TOKEN="cp-xxx"`
+`export CP_TOKEN="cp-xxx"`{{exec}}
 
 Install
 ```
