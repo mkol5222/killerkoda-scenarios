@@ -13,7 +13,11 @@
         {
             "title": "Step 2: Installation",
             "text": "step2.md"
-          }
+          },
+          {
+              "title": "Step 3: Container image scan",
+              "text": "step3.md"
+            }
       ],
       "finish": {
         "text": "finish.md"

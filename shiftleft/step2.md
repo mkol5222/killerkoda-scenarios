@@ -4,7 +4,8 @@
 ```
 mkdir "$HOME/.cpshiftleft"
 SHIFTLEFT="$HOME/.cpshiftleft/shiftleft"
-curl -LO https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/linux/amd64/0.0.24/shiftleft -o "$SHIFTLEFT"
+echo "Downloading shiftleft binary to ${SHIFTLEFT}"
+curl -L https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/linux/amd64/0.0.24/shiftleft -o "$SHIFTLEFT"
 ```{{exec}} 
 
 
