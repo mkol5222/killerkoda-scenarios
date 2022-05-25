@@ -2,7 +2,7 @@
 
 We will focus on source code scan functionality in this step.
 ```
-"$SHIFTLEFT" code-scan-h
+"$SHIFTLEFT" code-scan -h
 ```{{exec}}
 
 
