@@ -20,7 +20,8 @@ Verify. Binary was stored in dot-folder `$HOME/.spectral`
 $HOME/.spectral/spectral --help
 ```{{exec}}
 
-Check config - DSN is your identity - https://en.wikipedia.org/wiki/Data_source_name - "connection string"
+Update and check config - DSN is your identity - https://en.wikipedia.org/wiki/Data_source_name - "connection string"
 ```
+$HOME/.spectral/spectral config --dsn "$SPECTRAL_DSN"
 $HOME/.spectral/spectral config
 ```{{exec}}
