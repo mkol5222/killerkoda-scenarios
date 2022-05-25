@@ -17,7 +17,11 @@
           {
               "title": "Step 3: Container image scan",
               "text": "step3.md"
-            }
+            },
+            {
+                "title": "Step 4: Source code scan",
+                "text": "step4.md"
+              }
       ],
       "finish": {
         "text": "finish.md"
