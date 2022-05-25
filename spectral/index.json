@@ -1,0 +1,31 @@
+{
+    "title": "SpectralOps.Io demo",
+    "description": "source code scan security",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Step 1: Authentication",
+          "text": "step1.md"
+        },
+        {
+            "title": "Step 2: Installation",
+            "text": "step2.md"
+          },
+          {
+              "title": "Step 3: Scan",
+              "text": "step3.md"
+            }
+            
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu20.04"
+    }
+  }
+  
