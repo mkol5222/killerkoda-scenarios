@@ -1,0 +1,26 @@
+{
+    "title": "ShiftLeft demo - container and source code scans",
+    "description": "",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Step 1: Authentication",
+          "text": "step1.md"
+        },
+        {
+            "title": "Step 2: Installation",
+            "text": "step2.md"
+          }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu20.04"
+    }
+  }
+  
