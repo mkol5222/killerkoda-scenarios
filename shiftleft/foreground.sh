@@ -1,3 +1,3 @@
 echo "Installing scenario..."
-apt install jq
+apt install jq -y
 echo DONE
