@@ -27,3 +27,5 @@ curl localhost
 ```{{exec}} 
 
 And http://localhost:80 (NGINX reverse proxy) from browser [HERE]({{TRAFFIC_HOST1_80}})
+
+NGINX is handling access to Acme Audit, but still nobody prevents you to bypass login dialog.
