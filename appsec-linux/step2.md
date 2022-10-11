@@ -6,7 +6,7 @@ Acme Audit application is vulnerable to an SQL Injection attack that allows bypa
 
 Let's try to take advantage of this and login without having an account.
 
-1. Open Acme Audit via your web browser by clicking [HERE]{{TRAFFIC_HOST1_8080}} (it will open in another browser tab)
+1. Open Acme Audit via your web browser by clicking [HERE]({{TRAFFIC_HOST1_8080}}) (it will open in another browser tab)
 
 2. Enter the following credentials:
 
