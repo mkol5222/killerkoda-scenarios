@@ -1,35 +1,34 @@
 {
-    "title": "ShiftLeft demo - container and source code scans",
-    "description": "",
-    "details": {
-      "intro": {
-        "text": "intro.md",
-        "foreground": "foreground.sh"
-      },
-      "steps": [
-        {
-          "title": "Step 1: Authentication",
-          "text": "step1.md"
-        },
-        {
-            "title": "Step 2: Installation",
-            "text": "step2.md"
-          },
-          {
-              "title": "Step 3: Container image scan",
-              "text": "step3.md"
-            },
-            {
-                "title": "Step 4: Source code scan",
-                "text": "step4.md"
-              }
-      ],
-      "finish": {
-        "text": "finish.md"
-      }
+  "title": "ShiftLeft demo - container and source code scans",
+  "description": "",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh"
     },
-    "backend": {
-      "imageid": "ubuntu20.04"
+    "steps": [
+      {
+        "title": "Step 1: Authentication",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Installation",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3: Container image scan",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4: Source code scan",
+        "text": "step4.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
     }
+  },
+  "backend": {
+    "imageid": "ubuntu20.04"
   }
-  
+}
