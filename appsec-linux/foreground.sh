@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo "Installing scenario..."
 
 echo "Packages"
