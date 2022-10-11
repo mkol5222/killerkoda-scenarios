@@ -1,0 +1,25 @@
+{
+  "title": "Check Point AppSec on Linux",
+  "description": "securing NGINX reverse proxy by ML-based Web Application & API Protection engine",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Step 1: Install NGINX",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Configure NGINX as reverse proxy",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu20.04"
+  }
+}
