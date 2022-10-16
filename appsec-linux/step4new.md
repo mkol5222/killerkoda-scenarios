@@ -22,9 +22,14 @@ export APP_URL={{TRAFFIC_HOST1_80}}
 
 ## Install AppSec and provision configuration on server using API
 
+JQ is required for provisioning script
+```
+apt install jq -y
+```{{exec}} 
+
 Download installation script
 ```
-curl -o appsec-killercoda-install.sh -L 'https://gist.githubusercontent.com/mkol5222/f3d7d7d6c681a5c2a53e249c448d438c/raw/c0d46cb23b2119ab5e1403fa20776d107e545113/appsec-cli.sh'
+curl -o appsec-killercoda-install.sh -L 'https://gist.githubusercontent.com/mkol5222/86eb345c547c227fd3b0326b6ca447ef/raw/0097a767d49391d06ea21207eb9a1d212fed53af/appsec-killercoda-install.sh'
 ```{{exec}} 
 
 and execute it
