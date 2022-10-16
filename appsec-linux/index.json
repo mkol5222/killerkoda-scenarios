@@ -22,6 +22,14 @@
       {
         "title": "Step 4: Installation of AppSec Agent",
         "text": "step4new.md"
+      },
+      {
+        "title": "Step 5: Monitoring od AppSec Agent",
+        "text": "step5.md"
+      },
+      {
+        "title": "Step 6: AppSec protected application",
+        "text": "step6.md"
       }
     ],
     "finish": {
