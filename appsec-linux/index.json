@@ -24,8 +24,12 @@
         "text": "step4new.md"
       },
       {
-        "title": "Step 5: Monitoring od AppSec Agent",
+        "title": "Step 5: Monitoring of AppSec Agent",
         "text": "step5.md"
+      },
+      {
+        "title": "Step 5b: Monitoring NGINX reverse proxy",
+        "text": "step5b.md"
       },
       {
         "title": "Step 6: AppSec protected application",
