@@ -21,4 +21,9 @@ Dump whole proxy configuration including proxy setup for Acme Audit
 nginx -T
 ```{{exec}}
 
-And cause fake SQL injection incident with opening browser on [Attack Link]({{TRAFFIC_HOST1_8080}}/?q=UNION+1=1)
+And cause fake SQL injection incident with opening browser on [Attack Link]({{TRAFFIC_HOST1_80}}/?q=UNION+1=1) or from command line using
+```
+curl {{TRAFFIC_HOST1_80}}/?q=UNION+1=1
+```{{exec}}
+
+Be patient - enforcement kicks in after while since agent deployment.
