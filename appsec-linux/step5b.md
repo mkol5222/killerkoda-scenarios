@@ -13,7 +13,7 @@ ss -l -p -n | grep :80
 
 Check if it is reachable and forwarding to Acme Audit app
 ```
-curl locahost
+curl localhost
 ```{{exec}}
 
 Dump whole proxy configuration including proxy setup for Acme Audit
