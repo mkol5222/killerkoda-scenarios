@@ -1,4 +1,3 @@
-# Step 2
 
 We have started application ACME Audit on local port 8080 for you:
 

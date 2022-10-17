@@ -1,4 +1,3 @@
-# Step 5
 
 ## Monitor AppSec Agent
 

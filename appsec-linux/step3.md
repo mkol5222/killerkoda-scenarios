@@ -1,4 +1,3 @@
-# Step 3
 
 ## NGINX as reverse proxy for Acme Audit application
 

@@ -1,4 +1,3 @@
-# Step 4
 
 ## Get API keys
 
@@ -29,7 +28,7 @@ apt install jq -y
 
 Download installation script
 ```
-curl -o appsec-killercoda-install.sh -L 'https://gist.githubusercontent.com/mkol5222/86eb345c547c227fd3b0326b6ca447ef/raw/0097a767d49391d06ea21207eb9a1d212fed53af/appsec-killercoda-install.sh'
+curl -o appsec-killercoda-install.sh -L 'https://gist.githubusercontent.com/mkol5222/86eb345c547c227fd3b0326b6ca447ef/raw/9e8c44ccc3b1116210ad764a8c88f651383aa4d2/appsec-killercoda-install.sh'
 ```{{exec}} 
 
 and execute it

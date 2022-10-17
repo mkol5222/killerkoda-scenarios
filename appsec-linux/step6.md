@@ -1,4 +1,3 @@
-# Step 6
 
 ## Protected Acme Audit app
 

@@ -1,4 +1,3 @@
-# Step 1
 
 Welcome to fresh new Ubuntu 20.04 LTS machine.
 
