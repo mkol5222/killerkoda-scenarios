@@ -5,7 +5,12 @@
     "intro": {
       "text": "intro.md",
       "foreground": "foreground.sh"
-    },
+    },"assets": {
+      "host01": [
+          {"file": "deploy-text4shell.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+         
+      ]
+  },
     "steps": [
       {
         "title": "Step 1: Install NGINX",
