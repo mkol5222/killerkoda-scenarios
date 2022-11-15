@@ -1,0 +1,20 @@
+{
+  "title": "WebSockets with Check Point AppSec on Linux",
+  "description": "securing NGINX reverse proxy by ML-based Web Application & API Protection engine",
+  "details": {
+    
+    "steps": [
+      {
+        "title": "Step 1: Real-time web app",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Explore vulnerable application",
+        "text": "step2.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu20.04"
+  }
+}
