@@ -5,12 +5,21 @@
     "intro": {
       "text": "intro.md",
       "foreground": "foreground.sh"
-    },"assets": {
+    },
+    "assets": {
       "host01": [
-          {"file": "deploy-text4shell.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "exploit-text4shell.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        {
+          "file": "deploy-text4shell.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "exploit-text4shell.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
       ]
-  },
+    },
     "steps": [
       {
         "title": "Step 1: Install NGINX",
