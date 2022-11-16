@@ -9,7 +9,7 @@
     },
     "assets": {
       "host01": [
-        { "file": "appsec-cli.sh", "target": "/usr/local/bin/", "chmod": "+x" },
+        { "file": "appsec-setup-for-appurl.sh", "target": "/usr/local/bin/", "chmod": "+x" },
         { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
       ]
     },

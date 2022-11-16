@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# API key to API requests auth token
 function getToken {
     RESP=$(curl -s --request POST \
         --url https://cloudinfra-gw.portal.checkpoint.com/auth/external \
@@ -8,19 +9,20 @@ function getToken {
     TOKEN=$(echo "$RESP" | jq -r '.data.token')
 }
 
+# save changes to management db
 function publishChanges {
     read -r -d '' QUERY <<'EOF'
-mutation {
-  publishChanges {
-    isValid
-    errors {
-        id type subType name message 
-    }
-    warnings {
-      id type subType name message
-    }
-  }
-}
+        mutation {
+        publishChanges {
+            isValid
+            errors {
+                id type subType name message 
+            }
+            warnings {
+            id type subType name message
+            }
+        }
+        }
 EOF
     BODY=$(jq -r -n --arg Q "$QUERY" '{query:$Q}')
     
@@ -34,13 +36,14 @@ EOF
     echo "$RES"
 }
 
+# start policy enforcement action task
 function enforcePolicy {
     read -r -d '' QUERY <<'EOF'
-mutation {
-  enforcePolicy {
-    id
-  }
-}
+    mutation {
+        enforcePolicy {
+            id
+        }
+    }
 EOF
     BODY=$(jq -r -n --arg Q "$QUERY" '{query:$Q}')
     
@@ -51,12 +54,12 @@ EOF
         --header 'content-type: application/json' \
         --data "$BODY")
     RES=$(echo "$RESP" | jq -r '.')
-    echo "$RES"
+    # echo "$RES"
     ENFORCETASK=$(echo "$RESP" | jq -r '.data.enforcePolicy.id')
     echo "$ENFORCETASK"
 }
 
-
+# get task status
 function getTask {
     read -r -d '' QUERY <<'EOF'
 query getTask($id: ID!) {
@@ -85,6 +88,21 @@ EOF
     echo "$RES"
 }
 
+# enfoce and make sure it is finished
+function enforcePolicyAndWait {
+    T=$(enforcePolicy)
+    
+    while : ; do
+        echo -n '.'
+        S=$(getTask "$T" | jq -r .data.getTask.status)
+        # echo "$S"
+        [[ "$S" = "InProgress" ]] || break
+        sleep 1
+    done
+    echo  
+}
+
+# get profile auth token for installation / deployment
 function getProfileToken {
     read -r -d '' QUERY <<'EOF'
 query getProfile($id:ID!) {
@@ -108,7 +126,7 @@ EOF
         --header 'content-type: application/json' \
         --data "$BODY")
     RES=$(echo "$RESP" | jq -r '.')
-    echo "$RES"
+    # echo "$RES"
     PROFILETOKEN=$(echo "$RESP" | jq -r '.data.getEmbeddedProfile.authentication.token')
     echo "$PROFILETOKEN"
 }
@@ -131,6 +149,27 @@ EOF
         --data "$BODY_BESTPRACTICE")
     PRACTICEID=$(echo "$RESP" | jq -r '.data.getPractices[0].id')
     echo "$PRACTICEID"
+}
+
+function getLinuxAgents {
+    read -r -d '' Q_LINUXPROFILE <<'EOF'
+        query  {
+            getProfiles(matchSearch:"Linux Agents") {
+                id name
+            }
+        }
+EOF
+    BODY_LINUXPROFILE=$(jq -r -n --arg Q "$Q_LINUXPROFILE" '{query:$Q}')
+    
+
+    RESP=$(curl -s --request POST \
+        --url https://cloudinfra-gw.portal.checkpoint.com/app/i2/graphql/V1 \
+        --header "authorization: Bearer ${TOKEN}" \
+        --header 'content-type: application/json' \
+        --data "$BODY_LINUXPROFILE")
+        #echo $RESP
+    LINUXPROFILEID=$(echo "$RESP" | jq -r '.data.getProfiles[0].id')
+    echo "$LINUXPROFILEID"
 }
 
 function newLinuxProfile {
@@ -167,7 +206,7 @@ EOF
     query:$Q, 
     variables: {
         assetInput: {
-            name: "web app 2",
+            name: $N,
    	        URLs: [$U],
             "profiles": [$P],
             "practices": {
@@ -181,8 +220,10 @@ EOF
 
 echo "$JQ_SCRIPT"
 
+    URLHASH=$(echo "$1" | md5sum | cut -d' ' -f1)
+    NAME="WebAsset-$URLHASH"
     BODY_NEWWEBASSET=$(jq -r -n --arg Q "$Q_NEWWEBASSET" \
-        --arg U "$1" --arg P "$NEWPROFILEID" --arg B "$PRACTICEID" \
+        --arg U "$1" --arg N "$NAME" --arg P "$LINUXPROFILEID" --arg B "$PRACTICEID" \
         "$JQ_SCRIPT" )
     
 
@@ -195,12 +236,34 @@ echo "$JQ_SCRIPT"
     echo "$NEWASSET"
 }
 
-source appsec_keys.sh
+source /usr/local/bin/appsec-keys.sh
 
+echo
+echo "Getting API token"
 getToken "${HORIZON_POLICY_CLIENTID}" "${HORIZON_POLICY_SECRETKEY}"
 
+echo "Getting Web App Best Practice id"
+getBestPractice
+
+echo "Getting Linux Agents profile id"
+P=$(getLinuxAgents)
+
+
+APP_URL1=$(echo "$APP_URL" | sed s/^https:/http:/)
+echo "Creating new web app asset for $APP_URL1"
+newWebAppAsset "$APP_URL1"
+
+echo "Publishing changes"
 publishChanges
 
-enforcePolicy
+echo "Enforcing policy"
+enforcePolicyAndWait
 
-getProfileToken "$NEWPROFILEID"
+echo "Getting Linux Agents profile installation token"
+PROFILETOKEN=$(getProfileToken "$P")
+echo 
+echo "Installing AppSec Agent..."
+wget https://checkpoint.com/nanoegg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token "$PROFILETOKEN"
+
+echo
+echo "Done"
