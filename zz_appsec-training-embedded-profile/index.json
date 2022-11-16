@@ -9,7 +9,11 @@
     },
     "assets": {
       "host01": [
-        { "file": "appsec-setup-for-appurl.sh", "target": "/usr/local/bin/", "chmod": "+x" },
+        {
+          "file": "appsec-setup-for-appurl.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
         { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
       ]
     },
@@ -34,7 +38,7 @@
       {
         "title": "Step 5: Protected Web App test",
         "text": "step5.md"
-      },
+      }
     ]
   },
   "backend": {
