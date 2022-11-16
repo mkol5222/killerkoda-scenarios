@@ -6,9 +6,10 @@
     "background": "background.sh",
     "assets": {
       "host01": [
-          {"file": "appsec-cli.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        { "file": "appsec-cli.sh", "target": "/usr/local/bin/", "chmod": "+x" },
+        { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
       ]
+    }
   },
   "details": {
     "steps": [
