@@ -302,9 +302,13 @@ echo "Getting Linux Agents profile id"
 LINUXPROFILEID=$(getLinuxAgents)
 echo "$LINUXPROFILEID"
 
+# save for verification of step!
+echo "$APP_URL" > /tmp/appurl
+
 APP_URL1=$(echo "$APP_URL" | sed s/^https:/http:/)
 echo "Creating new web app asset for $APP_URL1 on profile $LINUXPROFILEID"
 newWebAsset "$APP_URL1"
+
 
 echo "Publishing changes"
 publishChanges
