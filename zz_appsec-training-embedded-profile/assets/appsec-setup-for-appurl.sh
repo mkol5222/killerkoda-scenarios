@@ -285,7 +285,7 @@ EOF
         exit 1
     fi
 
-    NEWASSET=$(echo "$RESP" | jq -r '.')
+    NEWASSET=$(echo "$RESP" | jq -r '.data.newWebAppAsset')
     echo "$NEWASSET"
 }
 
