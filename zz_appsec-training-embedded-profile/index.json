@@ -28,8 +28,13 @@
       },
       {
         "title": "Step 4: Protect your app with AppSec nano agent",
-        "text": "step4.md"
-      }
+        "text": "step4.md",
+        "verify": "step4-verify.sh"
+      },
+      {
+        "title": "Step 5: Protected Web App test",
+        "text": "step5.md"
+      },
     ]
   },
   "backend": {

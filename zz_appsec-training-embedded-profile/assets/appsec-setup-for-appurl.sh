@@ -285,7 +285,7 @@ EOF
         exit 1
     fi
 
-    NEWASSET=$(echo "$RESP" | jq -r '.data.newWebApplicationAsset')
+    NEWASSET=$(echo "$RESP" | jq -r '.data')
     echo "$NEWASSET"
 }
 
@@ -314,6 +314,7 @@ enforcePolicyAndWait
 
 echo "Getting Linux Agents profile installation token"
 PROFILETOKEN=$(getProfileToken "$LINUXPROFILEID")
+echo "$PROFILETOKEN"
 echo "Running wget https://checkpoint.com/nanoegg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token $PROFILETOKEN"
 echo 
 echo "Installing AppSec Agent..."
