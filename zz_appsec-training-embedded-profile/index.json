@@ -1,5 +1,5 @@
 {
-  "title": "Check Point CloudGuard AppSec on Linux",
+  "title": "99 Check Point CloudGuard AppSec on Linux",
   "description": "securing NGINX reverse proxy by ML-based Web Application & API Protection engine",
   "intro": {
     "text": "intro.md"
