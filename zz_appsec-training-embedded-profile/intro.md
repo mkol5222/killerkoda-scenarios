@@ -1,3 +1,4 @@
+
 # Welcome
 
 Join us and explore securing web application using Check Point's CloudGuard AppSec from zero to secured application access.

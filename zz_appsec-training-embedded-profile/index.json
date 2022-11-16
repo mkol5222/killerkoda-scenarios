@@ -7,11 +7,11 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1: Real-time web app",
+        "title": "Step 1: Acme Audit web application",
         "text": "step1.md"
       },
       {
-        "title": "Step 2: Explore vulnerable application",
+        "title": "Step 2: Deploy reverse proxy",
         "text": "step2.md"
       }
     ]
