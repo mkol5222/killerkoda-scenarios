@@ -2,7 +2,13 @@
   "title": "99 Check Point CloudGuard AppSec on Linux",
   "description": "securing NGINX reverse proxy by ML-based Web Application & API Protection engine",
   "intro": {
-    "text": "intro.md"
+    "text": "intro.md",
+    "background": "background.sh",
+    "assets": {
+      "host01": [
+          {"file": "appsec-cli.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
   },
   "details": {
     "steps": [
@@ -13,6 +19,14 @@
       {
         "title": "Step 2: Deploy reverse proxy",
         "text": "step2.md"
+      },
+      {
+        "title": "Step 3: Hack Acme Audit",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4: Protect your app with AppSec nano agent",
+        "text": "step4.md"
       }
     ]
   },

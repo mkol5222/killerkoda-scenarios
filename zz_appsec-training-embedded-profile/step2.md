@@ -27,7 +27,10 @@ Reload NGINX configuration to activate new settings:
 nginx -s reload
 ```{{exec}} 
 
-Your proxy is now serving here.
+Your proxy is now serving application on port 80:
+```
+curl http://localhost:80/
+```{{exec}}
 
 Also port 80 displays your application from container on port 8080:
 
