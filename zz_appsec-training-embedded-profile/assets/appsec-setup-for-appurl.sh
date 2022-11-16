@@ -125,6 +125,19 @@ EOF
         --header "authorization: Bearer ${TOKEN}" \
         --header 'content-type: application/json' \
         --data "$BODY")
+
+    ERRORS=$(echo "$RESP" | jq -r '.errors')
+    # echo "$ERRORS"
+    if [ "$ERRORS" = "null" ]; then
+        true
+        #echo "Success creating new web app asset"
+    else
+        echo "Error in getProfileToken"
+        ERR=$(echo "$RESP" | jq -r '.errors[0].message')
+        echo "   ${ERR}. Exiting..."
+        exit 1
+    fi
+
     RES=$(echo "$RESP" | jq -r '.')
     # echo "$RES"
     PROFILETOKEN=$(echo "$RESP" | jq -r '.data.getEmbeddedProfile.authentication.token')
@@ -147,6 +160,19 @@ EOF
         --header "authorization: Bearer ${TOKEN}" \
         --header 'content-type: application/json' \
         --data "$BODY_BESTPRACTICE")
+
+    ERRORS=$(echo "$RESP" | jq -r '.errors')
+    # echo "$ERRORS"
+    if [ "$ERRORS" = "null" ]; then
+        true
+        #echo "Success creating new web app asset"
+    else
+        echo "Error in getBestPractice"
+        ERR=$(echo "$RESP" | jq -r '.errors[0].message')
+        echo "   ${ERR}. Exiting..."
+        exit 1
+    fi
+
     PRACTICEID=$(echo "$RESP" | jq -r '.data.getPractices[0].id')
     echo "$PRACTICEID"
 }
@@ -168,6 +194,19 @@ EOF
         --header 'content-type: application/json' \
         --data "$BODY_LINUXPROFILE")
         #echo $RESP
+
+    ERRORS=$(echo "$RESP" | jq -r '.errors')
+    # echo "$ERRORS"
+    if [ "$ERRORS" = "null" ]; then
+        true
+        #echo "Success creating new web app asset"
+    else
+        echo "Error in getLinuxAgents"
+        ERR=$(echo "$RESP" | jq -r '.errors[0].message')
+        echo "   ${ERR}. Exiting..."
+        exit 1
+    fi
+
     LINUXPROFILEID=$(echo "$RESP" | jq -r '.data.getProfiles[0].id')
     echo "$LINUXPROFILEID"
 }
@@ -218,20 +257,34 @@ EOF
 }
 EOF
 
-echo "$JQ_SCRIPT"
+# echo "$JQ_SCRIPT"
 
     URLHASH=$(echo "$1" | md5sum | cut -d' ' -f1)
     NAME="WebAsset-$URLHASH"
     BODY_NEWWEBASSET=$(jq -r -n --arg Q "$Q_NEWWEBASSET" \
-        --arg U "$1" --arg N "$NAME" --arg P "$LINUXPROFILEID" --arg B "$PRACTICEID" \
+        --arg U "$1" --arg N "$NAME" \
+        --arg P "$LINUXPROFILEID" --arg B "$PRACTICEID" \
         "$JQ_SCRIPT" )
-    
+
+    # echo "$BODY_NEWWEBASSET"
 
     RESP=$(curl -s --request POST \
         --url https://cloudinfra-gw.portal.checkpoint.com/app/i2/graphql/V1 \
         --header "authorization: Bearer ${TOKEN}" \
         --header 'content-type: application/json' \
         --data "$BODY_NEWWEBASSET")
+
+    ERRORS=$(echo "$RESP" | jq -r '.errors')
+    # echo "$ERRORS"
+    if [ "$ERRORS" = "null" ]; then
+        echo "Success creating new web app asset"
+    else
+        echo "Error when creating new web app asset"
+        ERR=$(echo "$RESP" | jq -r '.errors[0].message')
+        echo "   ${ERR}. Exiting..."
+        exit 1
+    fi
+
     NEWASSET=$(echo "$RESP" | jq -r '.')
     echo "$NEWASSET"
 }
@@ -246,12 +299,12 @@ echo "Getting Web App Best Practice id"
 getBestPractice
 
 echo "Getting Linux Agents profile id"
-P=$(getLinuxAgents)
-
+LINUXPROFILEID=$(getLinuxAgents)
+echo "$LINUXPROFILEID"
 
 APP_URL1=$(echo "$APP_URL" | sed s/^https:/http:/)
-echo "Creating new web app asset for $APP_URL1"
-newWebAppAsset "$APP_URL1"
+echo "Creating new web app asset for $APP_URL1 on profile $LINUXPROFILEID"
+newWebAsset "$APP_URL1"
 
 echo "Publishing changes"
 publishChanges
