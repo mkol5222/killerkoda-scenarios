@@ -3,11 +3,7 @@
     "title": "GIT: Filesystem monitoring - TE investigator",
     "description": "automated uploads scan and move",
     "details": {
-        "assets": {
-            "host01": [
-              {"file": "*", "target": "~/app"}
-            ]
-          },
+
         "steps": [
             {
                 "title": "Get ready",
@@ -28,6 +24,6 @@
         "uilayout": "terminal"
     },
     "backend": {
-        "imageid": "ubuntu"
+         "imageid": "ubuntu20.04"
     }
 }
