@@ -30,9 +30,17 @@ Look at quarantine here:
 `curl localhost:9999`{{execute T2}}
 You should see malicous files moved to quarantine by QUARANTINE action.
 
+Quarantine in your browser
+{{TRAFFIC_HOST1_9999}}
+with reports service
+{{TRAFFIC_HOST1_7777}}
+
 and at clean side
 `curl localhost:8888`{{execute T2}}
 You should see benign file moved to clean side by MOVE action.
+
+Clean side exposed to browser
+{{TRAFFIC_HOST1_8888}}
 
 Clean side is also accessible from clean side SFTP server
 `sftp -P 3333 root@localhost:/root/files`{{execute T2}}

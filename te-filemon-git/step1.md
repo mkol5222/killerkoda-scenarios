@@ -1,3 +1,12 @@
+
+This scenario demonstrates use of ***Check Point SANDBLAST***
+to automatically discover, inspect and move
+files uploaded with SFTP on "dirty side" (port 2222)
+
+Benign files are available to internal users
+on "clean side" via SFTP on port 3333
+or via browser on port 8888.
+
 Check out app source
 `git clone https://github.com/mkol5222/te-filemon.git`{{execute}}
 
