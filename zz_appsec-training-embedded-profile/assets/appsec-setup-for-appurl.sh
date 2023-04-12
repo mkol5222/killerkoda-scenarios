@@ -319,10 +319,10 @@ enforcePolicyAndWait
 echo "Getting Linux Agents profile installation token"
 PROFILETOKEN=$(getProfileToken "$LINUXPROFILEID")
 echo "$PROFILETOKEN"
-echo "Running wget https://checkpoint.com/nanoegg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token $PROFILETOKEN"
+echo "Running wget https://sc1.checkpoint.com/nanoegg/cp-nano-egg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token $PROFILETOKEN"
 echo 
 echo "Installing AppSec Agent..."
-wget https://checkpoint.com/nanoegg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token "$PROFILETOKEN"
+wget https://sc1.checkpoint.com/nanoegg/cp-nano-egg -O nanoegg && chmod +x nanoegg && ./nanoegg --install --token "$PROFILETOKEN"
 
 echo
 echo "Done"
