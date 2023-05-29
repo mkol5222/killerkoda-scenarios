@@ -1,5 +1,6 @@
 {
     "title": "AppSec on K8S cluster",
+    "description": "Use a simple one node Kubernetes cluster and let user list all pods",
     "details": {
       "intro": {
         "text": "intro.md"
