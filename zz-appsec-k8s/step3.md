@@ -35,7 +35,14 @@ INGRESS_PORT=$(k get svc/cp-appsec-cpappsec-controller -o json | jq -r '.spec.po
 echo $INGRESS_PORT
 sed -i "s/-80/-${INGRESS_PORT}/" i.yaml
 
-kubectl apply -f i.yaml
+while kubectl apply -f i.yaml; [[ $? -ne 0 ]];
+do
+  echo "Result unsuccessful"
+  sleep 3
+done
+
+echo "Result successful"
+
 
 kubectl get ingress -o yaml
 
