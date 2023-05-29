@@ -7,12 +7,16 @@
       },
       "steps": [
         {
-          "title": "Create a pod",
+          "title": "Create and expose app",
           "text": "step1.md"
         },
         {
-          "title": "Delete a pod",
+          "title": "Install storage and deploy AppSec ingress",
           "text": "step2.md"
+        },
+        {
+          "title": "Configure ingress via Killeroda to web app",
+          "text": "step3.md"
         }
       ],
       "finish": {
