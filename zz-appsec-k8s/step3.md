@@ -33,7 +33,7 @@ EOF
 
 INGRESS_PORT=$(k get svc/cp-appsec-cpappsec-controller -o json | jq -r '.spec.ports[]|select(.port==80)|.nodePort')
 echo $INGRESS_PORT
-sed -i "s/-80/${INGRESS_PORT}/" i.yaml
+sed -i "s/-80/-${INGRESS_PORT}/" i.yaml
 
 kubectl apply -f i.yaml
 

@@ -10,7 +10,7 @@ kubectl scale deploy/web --replicas 3
 
 kubectl get svc
 
-APP_PORT=$(k get svc/cp-appsec-cpappsec-controller -o json | jq -r '.spec.ports[]|select(.port==80)|.nodePort')
+APP_PORT=$(k get svc/web -o json | jq -r '.spec.ports[]|select(.port==8080)|.nodePort')
 echo $APP_PORT
 
 echo "visit Killercoda on Web App port $APP_PORT"
