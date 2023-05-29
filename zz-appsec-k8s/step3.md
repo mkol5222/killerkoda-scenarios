@@ -30,4 +30,8 @@ spec:
                 port:
                   number: 8080
 EOF
+
+kubectl apply -f i.yaml
+
+kubectl get ingress -o yaml
 ```{{exec}} 
