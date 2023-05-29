@@ -3,10 +3,13 @@
 Create ingress YAML with Killercoda URL
 
 ```
-export APP_URL={{TRAFFIC_HOST1_80}}
-echo $APP_URL
+export url={{TRAFFIC_HOST1_80}}
+echo $url
+host="${url#*://}"
+host="${host%%/*}"
+echo $host
 
-cat > i.yaml <<"EOF"
+cat > i.yaml <<EOF
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -16,7 +19,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: $APP_URL
+    - host: $host
       http:
         paths:
           - path: /
