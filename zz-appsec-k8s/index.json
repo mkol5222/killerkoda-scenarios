@@ -1,0 +1,24 @@
+{
+    "title": "AppSec on K8S cluster",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Create a pod",
+          "text": "step1.md"
+        },
+        {
+          "title": "Delete a pod",
+          "text": "step2.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"
+    }
+  }
