@@ -40,4 +40,9 @@ kubectl apply -f i.yaml
 kubectl get ingress -o yaml
 
 echo "visit Killercoda on Ingress port $INGRESS_PORT"
+
+echo "Make sure AppSec asset is handling incoming URL http://$host/" | sed  "s/-80/-${INGRESS_PORT}/" 
+
+echo "BUT you should visit URL https://$host/?q=UNION=5=5" | sed  "s/-80/-${INGRESS_PORT}/" 
+
 ```{{exec}} 
