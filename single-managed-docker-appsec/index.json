@@ -1,0 +1,29 @@
+{
+    "title": "[ALPHA] AppSec: single managed Docker container",
+    "description": "explore easy deployment option in single container with ML-based Web Application & API Protection engine by Check Point",
+  
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Step 1: Unprotected web app server",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2: Install AppSec with NGINX in single managed container",
+          "text": "step2.md"
+        },
+        {
+          "title": "Step 3: Diagnostics and troubleshooting",
+          "text": "step3.md"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu20.04"
+    }
+  }
+  
