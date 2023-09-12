@@ -19,6 +19,10 @@
         {
           "title": "Step 3: Diagnostics and troubleshooting",
           "text": "step3.md"
+        },
+        {
+          "title": "Step 4: Accessing protected application",
+          "text": "step4.md"
         }
       ]
     },

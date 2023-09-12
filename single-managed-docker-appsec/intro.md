@@ -6,4 +6,4 @@ Join us and explore securing Web App using Check Point's CloudGuard AppSec in Do
 AppSec [homepage](https://www.checkpoint.com/cloudguard/appsec/) 
 and [docs](https://appsec-doc.inext.checkpoint.com/)
 
-Scenario version 103
+Scenario version 104

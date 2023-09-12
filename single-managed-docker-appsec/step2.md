@@ -36,6 +36,10 @@ Now you are ready to deploy the agent with embedded managed NGINX reverse proxy:
 echo docker run -d --name=agent-container -v=./cp-conf:/etc/cp/conf -v=./cp-data:/etc/cp/data -v=./cp-logs:/var/log/nano_agent -v=./cp-nginx:/etc/nginx/conf.d/ -v=./cp-certs:/etc/certs/ -p 8443:443 -p 80:80 -p 8117:8117 -it checkpoint/cloudguard-appsec-standalone /cloudguard-appsec-standalone --token "$CPTOKEN"
 ```{{exec}}
 
+Above told you the command. Now run it:
+```
+docker run -d --name=agent-container -v=./cp-conf:/etc/cp/conf -v=./cp-data:/etc/cp/data -v=./cp-logs:/var/log/nano_agent -v=./cp-nginx:/etc/nginx/conf.d/ -v=./cp-certs:/etc/certs/ -p 8443:443 -p 80:80 -p 8117:8117 -it checkpoint/cloudguard-appsec-standalone /cloudguard-appsec-standalone --token "$CPTOKEN"
+```{{exec}}
 
 
 
