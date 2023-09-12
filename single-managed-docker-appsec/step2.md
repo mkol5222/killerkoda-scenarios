@@ -5,7 +5,7 @@ Note your frontend URL:
 export APP_URL_RAW={{TRAFFIC_HOST1_80}}
 APP_URL=$(echo "$APP_URL_RAW" | sed s/^https:/http:/)
 
-echo "Asset front-end URL to use: $APP_URL"
+echo "Asset front-end URL to use: $APP_URL/"
 ```{{exec}}
 
 
@@ -14,9 +14,13 @@ Note your backend URL - based on IP of docker0 NIC:
 DOCKER0IP=$(ip -j a | jq -r '.[]|select(.ifname=="docker0")|.addr_info[]|select(.family=="inet")|.local')
 
 echo $DOCKER0IP
+echo
+echo "Backend URL is: http://$DOCKER0IP:8080/"
 ```{{exec}}
 
+
 Create Agent profile: Docker / Single Container - CloudGuard AppSec (With Reverse Proxy)
+Use descriptive name and remember it for next step.
 And store it to env variable called CPTOKEN:
 Make sure to Publish and Enforce.
 
@@ -24,7 +28,7 @@ Make sure to Publish and Enforce.
 export CPTOKEN=cp-1958-USE_REAL_TOKEN_HERE 
 ```{{copy}}
 
-Create asset on top of this profile in Prevent mode and use front end and back end URLs from above.
+Create asset on top of this agent profile (you've used descriptive name for agent, choose it), go for Prevent mode and use front end and back end URLs from above.
 Make sure to Publish and Enforce.
 
 Now you are ready to deploy the agent with embedded managed NGINX reverse proxy:
