@@ -54,5 +54,9 @@ echo; kubectl get secret/cloudguard-controller -o json | jq -r .data.token | bas
 
 ```{{exec}}
 
-
+Save URL and token to file:
+```bash
+echo "$APP_URL" > ~/.kube/k8s-api-url
+echo "$(kubectl get secret/cloudguard-controller -o json | jq -r .data.token | base64 -d)" > ~/.kube/k8s-api-token
+```{{exec}}
 
