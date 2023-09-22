@@ -17,6 +17,10 @@
         {
           "title": "Start workload and see IPs in Kubernetes DC based Data Center Query object",
           "text": "step3.md"
+        },
+        {
+          "title": "TF",
+          "text": "step3.md"
         }
       ],
       "finish": {
@@ -24,6 +28,6 @@
       }
     },
     "backend": {
-      "imageid": "kubernetes-kubeadm-2nodes"
+      "imageid": "kubernetes-k3s-1node"
     }
   }
