@@ -1,5 +1,5 @@
 {
-    "title": "Kubernetes integratuin with Check Point Security Managemennt",
+    "title": "Kubernetes integration with Check Point Security Managemennt",
     "description": "demonstrating setup of CloudGuard Controller ability for access to Kubernetes objects in Check Point policy",
     "details": {
       "intro": {
