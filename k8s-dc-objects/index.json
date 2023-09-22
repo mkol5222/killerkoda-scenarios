@@ -11,16 +11,20 @@
           "text": "step1.md"
         },
         {
-          "title": "Gain Kubernetes Serviuce Account and expose API server from Killerkoda to Internet",
+          "title": "Gain Kubernetes Service Account and expose API server from Killerkoda to Internet",
           "text": "step2.md"
         },
         {
-          "title": "Start workload and see IPs in Kubernetes DC based Data Center Query object",
+          "title": "Install Terraform",
           "text": "step3.md"
         },
         {
-          "title": "TF",
+          "title": "Apply terraform",
           "text": "step4.md"
+        },
+        {
+          "title": "Workload",
+          "text": "step5.md"
         }
       ],
       "finish": {
