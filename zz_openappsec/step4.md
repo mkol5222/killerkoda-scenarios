@@ -5,7 +5,7 @@ wget https://downloads.openappsec.io/open-appsec-install && chmod +x open-appsec
 ```{{exec}} 
 
 ```
-./open-appsec-install --auto --detect --no-email
+./open-appsec-install --auto --prevent --no-email
 ```{{exec}} 
 
 You may monitor nano agent deployment in detail using
