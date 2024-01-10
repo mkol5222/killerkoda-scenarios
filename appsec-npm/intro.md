@@ -4,4 +4,4 @@ Check Point [announced](https://www.openappsec.io/post/announcing-open-appsec-wa
 
 Read [the blog post](https://www.openappsec.io/post/announcing-open-appsec-waf-integration-with-nginx-proxy-manager) for more details.
 
-ver 0.002
+ver 0.004
