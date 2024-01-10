@@ -1,0 +1,46 @@
+{
+  "title": "88 Check Point open-appsec",
+  "description": "securing NGINX reverse proxy by ML-based Web Application & API Protection engine",
+
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "appsec-setup-for-appurl.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
+      ]
+    },
+    "steps": [
+      {
+        "title": "Step 1: Acme Audit web application",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Deploy reverse proxy",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3: Hack Acme Audit",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4: Protect your app with AppSec nano agent",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5: Protected Web App test",
+        "text": "step5.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu20.04"
+  }
+}
