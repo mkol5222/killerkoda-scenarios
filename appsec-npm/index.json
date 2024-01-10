@@ -1,0 +1,25 @@
+{
+    "title": "open-appsec WAF Integration with NGINX Proxy Manager",
+    "description": "https://nginxproxymanager.com/ makes exposing web services secure way easy. Now including open-appsec WAF integration.",
+  
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Step 1: ",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2: ",
+          "text": "step2.md"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu22.04"
+    }
+  }
+  
