@@ -34,7 +34,7 @@ Once you created a new Proxy Host within NGINX Proxy Manager WebUI you can now e
 
 * Click “Save”
 
-![Add Proxy Host](add_proxy_host.png)
+![Add Proxy Host](./add_proxy_host.png)
 
 Once you apply new host configuration, it would be accessle on [link]({{TRAFFIC_HOST1_80}}) URL. Try.
 

@@ -9,12 +9,16 @@
       },
       "steps": [
         {
-          "title": "Step 1: ",
+          "title": "Step 1: Install NGINX Proxy Manager with open-appsec WAF",
           "text": "step1.md"
         },
         {
-          "title": "Step 2: ",
+          "title": "Step 2: Configure new Proxy Host with WAF enabled",
           "text": "step2.md"
+        },
+        {
+          "title": "Step 3: Test WAF protection",
+          "text": "step3.md"
         }
       ]
     },
