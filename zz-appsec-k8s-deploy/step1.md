@@ -5,7 +5,7 @@
 * Managed - do **not** check "I want to manage NGINX myself"
 * copy profiles' Token to clipboard
 
-![alt text](create-profile.png)
+![alt text](./create-profile.png)
 
 Type `CPTOKEN=cp-123xxx`{{copy}} with your very own token.
 

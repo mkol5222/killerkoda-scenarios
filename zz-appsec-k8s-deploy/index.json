@@ -20,7 +20,7 @@
       }
     },
     "assets": {
-      "controlplane": [
+      "host01": [
         {"file": "appsec.yaml", "target": "~/", "chmod": "+w"}
       ]
     },
