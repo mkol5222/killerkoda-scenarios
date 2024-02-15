@@ -1,0 +1,30 @@
+{
+    "title": "CloudGuard WAF as Kubernetes Depoyment",
+    "description": "How to create scalable group of CloudGuard WAF agents in Kubernetes",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Agent profile",
+          "text": "step1.md"
+        },
+        {
+          "title": "Deploy",
+          "text": "step2.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "assets": {
+      "controlplane": [
+        {"file": "appsec.yaml", "target": "~/", "chmod": "+w"},
+      ]
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-1node"
+    }
+  }
