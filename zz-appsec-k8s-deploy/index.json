@@ -21,7 +21,7 @@
     },
     "assets": {
       "controlplane": [
-        {"file": "appsec.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "appsec.yaml", "target": "~/", "chmod": "+w"}
       ]
     },
     "backend": {
