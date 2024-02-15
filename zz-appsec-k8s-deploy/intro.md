@@ -1,3 +1,3 @@
 # AppSec as K8S Deployment
 
-ver 004
+ver 005
