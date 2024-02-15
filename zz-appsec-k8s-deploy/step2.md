@@ -20,7 +20,7 @@ We may expose it to Killercode port access feature by
 `kubectl port-forward svc/appsec-service 8080:80 --address 0.0.0.0 &`{{exec}} 
 
 You can access it [here]({{TRAFFIC_HOST1_8080}})
-404 is expected - will fix it soon by Asset definition.
+404 or 502 error is expected - will fix it soon by Asset definition.
 
 Note Killercoda port access feature hostname:
 `sed 's/PORT/8080/g' /etc/killercoda/host | sed 's/https:/http:/g'`{{exec}}
