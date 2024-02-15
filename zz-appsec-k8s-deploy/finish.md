@@ -17,3 +17,4 @@ Agents should be visible in [portal](https://portal.checkpoint.com/dashboard/app
 You can also scale up with `kubectl scale deploy appsec --replicas 6`{{exec}}
 
 And monitor agents to bedome ready to serve `kubectl get po -l app=appsec --watch`{{exec}}
+
