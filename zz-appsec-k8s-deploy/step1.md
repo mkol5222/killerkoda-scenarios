@@ -1,5 +1,6 @@
 # Create Docker profile - single container, managed
 
+* enter [Infinity Portal](https://portal.checkpoint.com/dashboard/appsec#/waf-policy/getting-started)
 * make sure profile is of type Docker
 * choose Single Container
 * Managed - do **not** check "I want to manage NGINX myself"
