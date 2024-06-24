@@ -63,14 +63,17 @@ services:
 EOF
 ```{{exec}} 
 
+Start the services with
+```
+docker-compose up -d
+```{{exec}} 
+
 Create new asset for http://localhost:8000 to match all Kong traffic. Assign it to Kong agent profile.
 Publish and ENFORCE the policy.
 
 Wait for agent in CloudGuard WAF agents section - to be visible and reporting current policy version.
 
 You may also check agent status on machine using
-```
-
 ```
 docker-compose exec agent-container cpnano -s
 ```{{exec}} 
