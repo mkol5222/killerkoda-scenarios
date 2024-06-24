@@ -14,7 +14,7 @@ cat <<EOF >> kong.yml
 _format_version: "2.1"
 services:
 - name: vulnerable-api-server
-  url: http://localhost:8080
+  url: http://172.19.0.1:8080
 - name: ip-iol-cz-service
   url: http://ip.iol.cz/ip/
 routes:
@@ -33,6 +33,9 @@ Lets bring container definitions; remember that TOKEN is required and should hav
 ```
 cat <<EOF >> docker-compose.yml
 version: "3.7"
+networks:
+  apinet:
+
 services:
 
   kong:
@@ -52,6 +55,8 @@ services:
       - KONG_ADMIN_ERROR_LOG=/dev/stderr
       - KONG_ADMIN_LISTEN=0.0.0.0:8001
       - KONG_ADMIN_GUI_URL=http://localhost:8002
+    networks:
+      - apinet
   agent-container:
     ipc: host
     volumes:
@@ -60,6 +65,8 @@ services:
       - ./agent-container/logs:/var/log/nano_agent
     image: checkpoint/infinity-next-nano-agent
     command: ["/cp-nano-agent", "--token", "$TOKEN"]
+    networks:
+      - apinet
 EOF
 ```{{exec}} 
 
@@ -93,5 +100,17 @@ curl -s 'localhost:8000/ip/?z=UNION+1=1'
 curl -s 'localhost:8000/ip/?z=cat+/etc/passwd'
 ```{{exec}} 
 
+
+Our API service from step 1 is also protected against SQL Injection attack,
+when accessed via Kong on port 8000:
+```
+curl -s -G -v -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJpZCI6MX0.pnlUuw6CzSG2In05n7WMDFP1l5GeqyAnWN98x9zcAc0" --data-urlencode "email=john.smith@example.com' OR '1'='1" http://localhost:8000/getemployees
+```{{exec}}
+
+
+While legit query goes through:
+```
+curl -s -G -v -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJpZCI6MX0.pnlUuw6CzSG2In05n7WMDFP1l5GeqyAnWN98x9zcAc0" --data-urlencode "email=john.smith@example.com" http://localhost:8000/getemployees
+```{{exec}}
 
 Return to CloudGuard WAF portal Monitor section and review the incidents.

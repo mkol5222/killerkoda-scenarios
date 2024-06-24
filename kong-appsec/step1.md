@@ -2,7 +2,7 @@ Welcome to fresh new Ubuntu 20.04 LTS machine.
 
 Lets deploy our API server. It will be exposed on port 8080 and we will put it behind Kong API Gateway later.
 ```
-docker run -d -p 8080:5000  ghcr.io/openappsec/vulnerable-api-server:latest
+docker run --name api-server -d -p 8080:5000  ghcr.io/openappsec/vulnerable-api-server:latest
 ```{{exec}} 
 
 Wait for deployment to finish and verify with
