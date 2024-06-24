@@ -2,7 +2,7 @@ Lets introduce API Gateway in front of our API server.
 
 Download Kong Gateway 3.1.1 package and install it:
 ```
-curl -Lo kong-3.1.1.amd64.deb "https://packages.konghq.com/public/gateway-31/deb/ubuntu/pool/focal/main/k/ko/kong_3.1.1/kong_3.1.1_amd64.deb" && sudo dpkg -i kong-3.1.1.amd64.deb
+curl -Lo kong-3.3.1.amd64.deb "https://packages.konghq.com/public/gateway-33/deb/ubuntu/pool/focal/main/k/ko/kong_3.3.1/kong_3.3.1_amd64.deb" && sudo dpkg -i kong-3.3.1.amd64.deb
 ```{{exec}} 
 
 Configure Kong Gateway to use declarative configuration and disable database:
