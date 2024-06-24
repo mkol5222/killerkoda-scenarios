@@ -14,7 +14,7 @@ cat <<EOF >> kong.yml
 _format_version: "2.1"
 services:
 - name: vulnerable-api-server
-  url: http://172.19.0.1:8080
+  url: http://172.30.1.2:8080
 - name: ip-iol-cz-service
   url: http://ip.iol.cz/ip/
 routes:
