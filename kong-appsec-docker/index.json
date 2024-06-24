@@ -1,0 +1,25 @@
+{
+    "title": "Kong with CloudGuard WAF in Docker",
+    "description": "securing Kong API Gateway with ML-based Web Application & API Protection engine by Check Point",
+  
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Step 1: Unprotected API server",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2: Install Kong API Gateway",
+          "text": "step2.md"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu20.04"
+    }
+  }
+  
