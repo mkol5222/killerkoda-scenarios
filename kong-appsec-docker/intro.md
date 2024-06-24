@@ -6,4 +6,4 @@ Join us and explore securing API using Check Point's CloudGuard AppSec from zero
 AppSec [homepage](https://www.checkpoint.com/cloudguard/appsec/) 
 and [docs](https://appsec-doc.inext.checkpoint.com/)
 
-Scenario version 101
+Scenario version 102
