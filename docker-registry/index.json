@@ -1,0 +1,30 @@
+{
+  "title": "Docker registry lab",
+  "description": "local Docker registry with self-signed certificate",
+
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "appsec-setup-for-appurl.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
+      ]
+    },
+    "steps": [
+      {
+        "title": "Step 1: Setup",
+        "text": "step1.md"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu22.04"
+  }
+}
