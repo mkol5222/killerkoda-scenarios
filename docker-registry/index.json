@@ -25,6 +25,6 @@
     ]
   },
   "backend": {
-    "imageid": "ubuntu22.04"
+    "imageid": "ubuntu20.04"
   }
 }
