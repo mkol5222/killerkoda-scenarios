@@ -1,0 +1,392 @@
+{
+	"action": "ALLOW",
+	"assessments": [
+		{
+			"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
+			"environmentName": "scans",
+			"createdTime": "2024-09-04T11:56:36.2945284Z",
+			"assessmentId": "044a8260-b84f-4e35-8ad7-ffab74a29f31",
+			"assessmentPassed": true,
+			"hasErrors": false,
+			"tests": [
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Container Image - Package with Critical Severity CVEs",
+						"severity": "Critical",
+						"logic": "Package where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should not have severity='Critical'",
+						"description": "Container Image contains Package with Critical Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.K8S.IA.UN.1",
+						"logicHash": "6FLpDCfU4RHq332B6h9ZAg",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "AWS Workloads - Package with Critical Severity CVEs",
+						"severity": "Critical",
+						"logic": "Package where scannedAsset.entityType='Instance' should not have severity='Critical'",
+						"description": "Aws Instance contains Package with Critical Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AWS.AWP.1",
+						"logicHash": "CK0wynC1zzGpOK42DQXi5w",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Azure Workloads - Package with Critical Severity CVEs",
+						"severity": "Critical",
+						"logic": "Package where scannedAsset.entityType in('FunctionApp', 'VirtualMachine') should not have severity='Critical'",
+						"description": "Azure Virtual Machine or Function App contains Package with Critical Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AZU.AWP.1",
+						"logicHash": "wDsClZ2tWmo04ApwR/w2zw",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Azure Workloads - Package with High Severity CVEs",
+						"severity": "High",
+						"logic": "Package where scannedAsset.entityType in('FunctionApp', 'VirtualMachine') should not have severity='High'",
+						"description": "Azure Virtual Machine or Function App contains Package with High Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AZU.AWP.2",
+						"logicHash": "3AHPh7EVE401oSH05tqdbw",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Container Image - Package with High Severity CVEs",
+						"severity": "High",
+						"logic": "Package where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should not have severity='High'",
+						"description": "Container Image contains Package with High Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.K8S.IA.UN.2",
+						"logicHash": "7xX5FiO0AkVd+6HXx8OOXQ",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "AWS Workloads - Malware",
+						"severity": "High",
+						"logic": "Malware where scannedAsset.entityType='Instance' should fail",
+						"description": "AWS Instance contains malware (malicious IP, URL or file)",
+						"remediation": "Take proactive measures to thoroughly investigate and address the detected malware, and remove it from your application if necessary.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AWS.AWP.3",
+						"logicHash": "SsYyAiK9voyHjyPLpCvrqQ",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Container Image - Malware",
+						"severity": "High",
+						"logic": "Malware where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should fail",
+						"description": "Container Image contains malware (malicious IP, URL or file)",
+						"remediation": "Take proactive measures to thoroughly investigate and address the detected malware, and remove it from your application if necessary.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.K8S.IA.UN.3",
+						"logicHash": "u9b8QzAmHScXsEI7LXPKsg",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "AWS Workloads - Package with High Severity CVEs",
+						"severity": "High",
+						"logic": "Package where scannedAsset.entityType='Instance' should not have severity='High'",
+						"description": "Aws Instance contains Package with High Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AWS.AWP.2",
+						"logicHash": "WzIwX7pqgNI8Uy+7/r8QDg",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Azure Workloads - Malware",
+						"severity": "High",
+						"logic": "Malware where scannedAsset.entityType in('FunctionApp', 'VirtualMachine') should fail",
+						"description": "Azure Virtual Machine or Function App contains malware (malicious IP, URL or file)",
+						"remediation": "Take proactive measures to thoroughly investigate and address the detected malware, and remove it from your application if necessary.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AZU.AWP.3",
+						"logicHash": "xa74igs6IPyn/SKguy5Brg",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Azure Workloads – Insecure Content",
+						"severity": "Low",
+						"logic": "InsecureContent where scannedAsset.entityType in('FunctionApp', 'VirtualMachine') should fail",
+						"description": "Azure Virtual Machine or Function App contains insecure content (e.g., secrets or credentials)",
+						"remediation": "Conduct a comprehensive review of your application code to assess the nature of the identified data. Implement security measures to mitigate the risk associated with insecure content",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AZU.AWP.4",
+						"logicHash": "cGuR9wEvhehfTbzhL0AVqA",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "AWS Workloads – Insecure Content",
+						"severity": "Low",
+						"logic": "InsecureContent where scannedAsset.entityType='Instance' should fail",
+						"description": "AWS Instance contains insecure content (e.g., secrets or credentials)",
+						"remediation": "Conduct a comprehensive review of your application code to assess the nature of the identified data. Implement security measures to mitigate the risk associated with insecure content",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.AWS.AWP.4",
+						"logicHash": "HyzgMfR5AtwKa2mqJNKeGA",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 0,
+					"relevantCount": 0,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Container Image – Insecure Content",
+						"severity": "Low",
+						"logic": "InsecureContent where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should fail",
+						"description": "Container Image contains insecure content (e.g., secrets or credentials)",
+						"remediation": "Conduct a comprehensive review of your application code to assess the nature of the identified data. Implement security measures to mitigate the risk associated with insecure content",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.K8S.IA.UN.4",
+						"logicHash": "z+zViVwUhQgVkepoOjbErQ",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				}
+			],
+			"testEntities": {
+				"insecureContent": [],
+				"malware": [],
+				"package": [],
+				"sbomPackage": [],
+				"imageScan": [
+					{
+						"risk-score": 0.0,
+						"totals": {
+							"all": 0,
+							"allFixable": 0,
+							"critical": 0,
+							"criticalFixable": 0,
+							"high": 0,
+							"highFixable": 0,
+							"medium": 0,
+							"mediumFixable": 0,
+							"low": 0,
+							"lowFixable": 0,
+							"unknown": 0,
+							"unknownFixable": 0,
+							"insecure-code": 0,
+							"insecure-content": 0,
+							"malicious-url": 0,
+							"malicious-ip": 0,
+							"malicious-file": 0,
+							"restricted-license": 0,
+							"cve": 0
+						},
+						"type": "ImageScan",
+						"name": "",
+						"id": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a-fb15e47f-0336-4d6b-a926-2d2890b8edc8",
+						"customUniqueKeyHash": "7FD57115396A24C5EFF4E199AF5989E3",
+						"category": "ImageScan",
+						"severity": "",
+						"remediation": ""
+					}
+				],
+				"scanSummary": [
+					{
+						"risk-score": 0.0,
+						"type": "ScanSummary",
+						"name": "",
+						"id": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a-fb15e47f-0336-4d6b-a926-2d2890b8edc8",
+						"customUniqueKeyHash": "8C9AAEC7990CBF11527AC2071F8ED7A3",
+						"category": "ScanSummary",
+						"severity": "",
+						"remediation": ""
+					}
+				],
+				"finding": []
+			},
+			"request": {
+				"id": -2007,
+				"name": "Workload Vulnerability Default 2.0",
+				"description": "Workload vulnerabilities"
+			},
+			"stats": {
+				"passed": 12,
+				"failed": 0,
+				"error": 0,
+				"failedTests": 0,
+				"excludedTests": 0,
+				"logicallyTested": 0,
+				"failedEntities": 0,
+				"failedRulesBySeverity": {
+					"informational": 0,
+					"low": 0,
+					"medium": 0,
+					"high": 0,
+					"critical": 0
+				},
+				"passedRulesBySeverity": {
+					"informational": 0,
+					"low": 3,
+					"medium": 0,
+					"high": 6,
+					"critical": 3
+				}
+			},
+			"scannedAsset": {
+				"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+				"platform": "ShiftLeft",
+				"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
+				"entityType": "ShiftLeftImage",
+				"externalId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+				"entityName": "docker.io/library/hello-world:latest",
+				"operatingSystem": "",
+				"additionalFields": {
+					"imageDigest": "",
+					"imageId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a"
+				}
+			},
+			"scanInfo": {
+				"scanProducer": "ImageAssuranceV2"
+			}
+		}
+	],
+	"requestId": "8aa0cb87-5d4b-45b1-9df8-c1782c00a9b9",
+	"scanInfo": {
+		"scanProducer": "ImageAssuranceV2"
+	},
+	"scannedAsset": {
+		"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+		"platform": "ShiftLeft",
+		"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
+		"entityType": "ShiftLeftImage",
+		"externalId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+		"entityName": "docker.io/library/hello-world:latest",
+		"operatingSystem": "",
+		"additionalFields": {
+			"imageDigest": "",
+			"imageId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a"
+		}
+	}
+}
