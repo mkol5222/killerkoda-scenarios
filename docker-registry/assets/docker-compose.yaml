@@ -1,8 +1,7 @@
-version: 2
+version: "2"
 
 volumes:
   registry_data:
-    name: registry_data
 
 networks:
   internal:
