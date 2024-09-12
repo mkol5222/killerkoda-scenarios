@@ -10,14 +10,17 @@
     "assets": {
       "host01": [
         {
-          "file": "appsec-setup-for-appurl.sh",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        { "file": "appsec-keys.sh", "target": "/usr/local/bin/", "chmod": "+x" }
+          "file": "docker-compose.yaml",
+          "target": "/root",
+          "chmod": "+r"
+        }
       ]
     },
     "steps": [
+      {
+        "title": "NOTES",
+        "text": "NOTES.md"
+      },
       {
         "title": "Step 1: Setup",
         "text": "step1.md"

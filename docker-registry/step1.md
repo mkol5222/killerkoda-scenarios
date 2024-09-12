@@ -6,3 +6,7 @@ uname -a
 ```
 docker --version
 ```{{exec}}
+
+```
+cat docker-compose.yaml
+```{{exec}}
