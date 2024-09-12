@@ -6,7 +6,7 @@ rm /root/.docker/config.json
 
 docker pull hello-world
 docker tag hello-world reg.localtest.me:hello-world
-docker push
+docker push reg.localtest.me:hello-world
 ```{{exec}}
 
 Login as read / vpn123

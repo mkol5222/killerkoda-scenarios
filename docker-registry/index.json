@@ -20,7 +20,7 @@
         },
         {
           "file": ".env-shiftleft",
-          "target":"/usr/local/bin",
+          "target":"/root",
           "chmod": "+x"
         }
       ]

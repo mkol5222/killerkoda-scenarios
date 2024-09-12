@@ -1,7 +1,7 @@
 # Scan container image with CloudGuard Shifyleft scanner
 
 ```shell
-. /usr/local/.env-shiftleft
+. ./.env-shiftleft
 echo $CHKP_CLOUDGUARD_ID
 ```{{exec}}
 
