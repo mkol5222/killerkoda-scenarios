@@ -19,7 +19,7 @@
           "target":"/root"
         },
         {
-          "file": ".env-shiftleft",
+          "file": "env-shiftleft",
           "target":"/root",
           "chmod": "+x"
         }
