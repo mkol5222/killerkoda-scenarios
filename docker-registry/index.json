@@ -17,6 +17,11 @@
         {
           "file": "nginx.conf",
           "target":"/root"
+        },
+        {
+          "file": ".env-shiftleft",
+          "target":"/usr/local/bin",
+          "chmod": "+x"
         }
       ]
     },
@@ -44,6 +49,18 @@
       {
         "title": "Step 5: Republish to local repo",
         "text": "step5-republish.md"
+      },
+      {
+        "title": "Step 6: read-only user",
+        "text": "step6-ro.md"
+      },
+      {
+        "title": "Step 7: RO fetch",
+        "text": "step7-fetch.md"
+      },
+      {
+         "title": "Step 8: scan",
+        "text": "step8-scan.md"
       }
     ]
   },
