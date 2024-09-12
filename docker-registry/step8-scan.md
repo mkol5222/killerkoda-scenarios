@@ -20,6 +20,6 @@ docker run --rm -v ./res:/res -v /tmp:/data -e CHKP_CLOUDGUARD_ID=$CHKP_CLOUDGUA
 
 ```shell
 cat ./res/scan.json | jq '.assessments[0].testEntities.scanSummary'
-cat ./res/scan.json | jq '.assessments[0].testEntities.imageScan' | less
+#cat ./res/scan.json | jq '.assessments[0].testEntities.imageScan' | less
 cat ./res/scan.json | jq '.assessments[0].testEntities.imageScan[0].totals' 
 ```{{exec}}
