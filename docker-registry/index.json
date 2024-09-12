@@ -36,6 +36,10 @@
       {
         "title": "Step 3: User accounts",
         "text": "step3-passwd.md"
+      },
+      {
+        "title": "Step 4: NGINX",
+        "text": "step4-nginx.md"
       }
     ]
   },
