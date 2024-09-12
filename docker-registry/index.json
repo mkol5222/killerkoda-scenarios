@@ -26,10 +26,7 @@
       ]
     },
     "steps": [
-      {
-        "title": "NOTES",
-        "text": "NOTES.md"
-      },
+
       {
         "title": "Step 1: Setup",
         "text": "step1.md"
