@@ -40,6 +40,10 @@
       {
         "title": "Step 4: NGINX",
         "text": "step4-nginx.md"
+      },
+      {
+        "title": "Step 5: Republish to local repo",
+        "text": "step5-republish.md"
       }
     ]
   },
