@@ -13,6 +13,10 @@
           "file": "docker-compose.yaml",
           "target": "/root",
           "chmod": "+r"
+        },
+        {
+          "file": "nginx.conf",
+          "target":"/root"
         }
       ]
     },
@@ -24,6 +28,14 @@
       {
         "title": "Step 1: Setup",
         "text": "step1.md"
+      },
+      {
+        "title": "Step 2: Certificate",
+        "text": "step2-cert.md"
+      },
+      {
+        "title": "Step 3: User accounts",
+        "text": "step3-passwd.md"
       }
     ]
   },
