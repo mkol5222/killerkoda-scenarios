@@ -22,6 +22,11 @@
           "file": "env-shiftleft",
           "target":"/root",
           "chmod": "+x"
+        },
+        {
+          "file": "scan.sh",
+          "target":"/root",
+          "chmod": "+x"
         }
       ]
     },
