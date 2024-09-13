@@ -1,19 +1,19 @@
 {
-	"action": "BLOCK",
+	"action": "ALLOW",
 	"assessments": [
 		{
 			"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 			"environmentName": "scans",
-			"createdTime": "2024-09-13T09:44:17.41796Z",
-			"assessmentId": "9e52e49c-7dca-43fe-9145-e18aa7fba7dc",
-			"assessmentPassed": false,
+			"createdTime": "2024-09-13T11:08:53.0308818Z",
+			"assessmentId": "38c6bf9a-a613-4414-8268-ffea30f0f5cd",
+			"assessmentPassed": true,
 			"hasErrors": false,
 			"tests": [
 				{
 					"error": "",
-					"testedCount": 16,
-					"relevantCount": 16,
-					"nonComplyingCount": 1,
+					"testedCount": 5,
+					"relevantCount": 5,
+					"nonComplyingCount": 0,
 					"rule": {
 						"name": "Container Image - Package with Critical Severity CVEs",
 						"severity": "Critical",
@@ -28,64 +28,12 @@
 						"logicHash": "6FLpDCfU4RHq332B6h9ZAg",
 						"isDefault": false
 					},
-					"entityResults": [
-						{
-							"validationStatus": "Relevant",
-							"isRelevant": true,
-							"isValid": false,
-							"isExcluded": false,
-							"exclusionId": "",
-							"remediationId": "",
-							"error": "",
-							"testObj": {
-								"entityType": "package",
-								"id": "deb@@zlib1g@1:1.2.13.dfsg-1",
-								"customEntityComparisonHash": "90641BA14EFBFD2B05A8F353F3FDA419"
-							}
-						}
-					],
-					"testPassed": false
+					"entityResults": [],
+					"testPassed": true
 				},
 				{
 					"error": "",
-					"testedCount": 16,
-					"relevantCount": 16,
-					"nonComplyingCount": 1,
-					"rule": {
-						"name": "Container Image - Package with High Severity CVEs",
-						"severity": "High",
-						"logic": "Package where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should not have severity='High'",
-						"description": "Container Image contains Package with High Severity CVEs",
-						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
-						"complianceTag": "",
-						"domain": "",
-						"priority": "",
-						"controlTitle": "",
-						"ruleId": "D9.K8S.IA.UN.2",
-						"logicHash": "7xX5FiO0AkVd+6HXx8OOXQ",
-						"isDefault": false
-					},
-					"entityResults": [
-						{
-							"validationStatus": "Relevant",
-							"isRelevant": true,
-							"isValid": false,
-							"isExcluded": false,
-							"exclusionId": "",
-							"remediationId": "",
-							"error": "",
-							"testObj": {
-								"entityType": "package",
-								"id": "deb@@perl-base@5.36.0-7+deb12u1",
-								"customEntityComparisonHash": "3C00934ACA393A466B769EB95FA8FCD2"
-							}
-						}
-					],
-					"testPassed": false
-				},
-				{
-					"error": "",
-					"testedCount": 16,
+					"testedCount": 5,
 					"relevantCount": 0,
 					"nonComplyingCount": 0,
 					"rule": {
@@ -107,7 +55,7 @@
 				},
 				{
 					"error": "",
-					"testedCount": 16,
+					"testedCount": 5,
 					"relevantCount": 0,
 					"nonComplyingCount": 0,
 					"rule": {
@@ -129,7 +77,7 @@
 				},
 				{
 					"error": "",
-					"testedCount": 16,
+					"testedCount": 5,
 					"relevantCount": 0,
 					"nonComplyingCount": 0,
 					"rule": {
@@ -144,6 +92,28 @@
 						"controlTitle": "",
 						"ruleId": "D9.AZU.AWP.2",
 						"logicHash": "3AHPh7EVE401oSH05tqdbw",
+						"isDefault": false
+					},
+					"entityResults": [],
+					"testPassed": true
+				},
+				{
+					"error": "",
+					"testedCount": 5,
+					"relevantCount": 5,
+					"nonComplyingCount": 0,
+					"rule": {
+						"name": "Container Image - Package with High Severity CVEs",
+						"severity": "High",
+						"logic": "Package where scannedAsset.entityType in('KubernetesImage', 'ContainerRegistryImage', 'ShiftLeftImage', 'EcsImage') should not have severity='High'",
+						"description": "Container Image contains Package with High Severity CVEs",
+						"remediation": "Check the Remediation field on the Package. If there is a Remediation, upgrade the package to the recommended package version.",
+						"complianceTag": "",
+						"domain": "",
+						"priority": "",
+						"controlTitle": "",
+						"ruleId": "D9.K8S.IA.UN.2",
+						"logicHash": "7xX5FiO0AkVd+6HXx8OOXQ",
 						"isDefault": false
 					},
 					"entityResults": [],
@@ -195,7 +165,7 @@
 				},
 				{
 					"error": "",
-					"testedCount": 16,
+					"testedCount": 5,
 					"relevantCount": 0,
 					"nonComplyingCount": 0,
 					"rule": {
@@ -313,266 +283,81 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:1.2.13.dfsg-1",
+						"version": "3.0.13-0ubuntu3.2",
 						"licenses": [
 							{
-								"value": "Zlib"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-45853",
-								"severity": "Critical",
-								"description": "MiniZip in zlib through 1.3 has an integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_64 via a long filename, comment, or extra field. NOTE: MiniZip is not a supported part of the zlib product. NOTE: pyminizip through 0.2.6 is also vulnerable because it bundles an affected zlib version, and exposes the applicable MiniZip code through its compress API.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-45853"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-45853",
-								"severity": "Critical",
-								"description": "MiniZip in zlib through 1.3 has an integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_64 via a long filename, comment, or extra field. NOTE: MiniZip is not a supported part of the zlib product. NOTE: pyminizip through 0.2.6 is also vulnerable because it bundles an affected zlib version, and exposes the applicable MiniZip code through its compress API.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 9.8,
-									"impact-score": 5.9,
-									"exploitability-score": 3.9,
-									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2023/10/20/9",
-									"http://www.openwall.com/lists/oss-security/2024/01/24/10",
-									"https://chromium.googlesource.com/chromium/src/+/d709fb23806858847131027da95ef4c548813356",
-									"https://chromium.googlesource.com/chromium/src/+/de29dd6c7151d3cd37cb4cf0036800ddfb1d8b61",
-									"https://github.com/madler/zlib/blob/ac8f12c97d1afd9bafa9c710f827d40a407d3266/contrib/README.contrib#L1-L4",
-									"https://github.com/madler/zlib/pull/843",
-									"https://lists.debian.org/debian-lts-announce/2023/11/msg00026.html",
-									"https://pypi.org/project/pyminizip/#history",
-									"https://security.gentoo.org/glsa/202401-18",
-									"https://security.netapp.com/advisory/ntap-20231130-0009/",
-									"https://www.winimage.com/zLibDll/minizip.html"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "zlib1g",
-						"id": "deb@@zlib1g@1:1.2.13.dfsg-1",
-						"customUniqueKeyHash": "90641BA14EFBFD2B05A8F353F3FDA419",
-						"category": "Package",
-						"severity": "Critical",
-						"description": "Package contains 1 CVEs: 1 Critical, 0 High, 0 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "5.36.0-7+deb12u1",
-						"licenses": [
+								"value": "Apache-2.0"
+							},
 							{
 								"value": "Artistic"
-							},
-							{
-								"value": "Artistic-2"
-							},
-							{
-								"value": "Artistic-dist"
-							},
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-3-clause-GENERIC"
-							},
-							{
-								"value": "BSD-3-clause-with-weird-numbering"
-							},
-							{
-								"value": "BSD-4-clause-POWERDOG"
-							},
-							{
-								"value": "BZIP"
-							},
-							{
-								"value": "DONT-CHANGE-THE-GPL"
-							},
-							{
-								"value": "Expat"
 							},
 							{
 								"value": "GPL-1"
 							},
 							{
 								"value": "GPL-1+"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3+-WITH-BISON-EXCEPTION"
-							},
-							{
-								"value": "HSIEH-BSD"
-							},
-							{
-								"value": "HSIEH-DERIVATIVE"
-							},
-							{
-								"value": "LGPL-2.1"
-							},
-							{
-								"value": "REGCOMP"
-							},
-							{
-								"value": "REGCOMP,"
-							},
-							{
-								"value": "RRA-KEEP-THIS-NOTICE"
-							},
-							{
-								"value": "SDBM-PUBLIC-DOMAIN"
-							},
-							{
-								"value": "TEXT-TABS"
-							},
-							{
-								"value": "Unicode"
-							},
-							{
-								"value": "ZLIB"
 							}
 						],
 						"is-os-package": true,
 						"cves": [
 							{
-								"id": "CVE-2023-31484",
+								"id": "CVE-2024-6119",
+								"severity": "Medium",
+								"description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+								"remediation": "3.0.13-0ubuntu3.4",
+								"isFixedByPackageRemediation": true,
+								"source": "Ubuntu",
+								"urls": [
+									"https://ubuntu.com/security/CVE-2024-6119"
+								]
+							},
+							{
+								"id": "CVE-2024-41996",
+								"severity": "Medium",
+								"description": "Validating the order of the public keys in the Diffie-Hellman Key Agreement Protocol, when an approved safe prime is used, allows remote attackers (from the client side) to trigger unnecessarily expensive server-side DHE modular-exponentiation calculations. The client may cause asymmetric resource consumption. The basic attack scenario is that the client must claim that it can only communicate with DHE, and the server must be configured to allow DHE and validate the order of the public key.",
+								"remediation": "",
+								"isFixedByPackageRemediation": false,
+								"source": "Ubuntu",
+								"urls": [
+									"https://ubuntu.com/security/CVE-2024-41996"
+								]
+							}
+						],
+						"relatedCves": [
+							{
+								"id": "CVE-2024-6119",
 								"severity": "High",
-								"description": "CPAN.pm before 2.35 does not verify TLS certificates when downloading distributions over HTTPS.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
+								"description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+								"remediation": "3.0.13-0ubuntu3.4",
+								"cvss-info": {
+									"base-score": 7.5,
+									"impact-score": 3.6,
+									"exploitability-score": 3.9,
+									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+									"version": "3.1",
+									"metrics": null,
+									"source": "NVD"
+								},
+								"isFixedByPackageRemediation": true,
+								"source": "NVD",
 								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-31484"
+									"https://github.com/openssl/openssl/commit/05f360d9e849a1b277db628f1f13083a7f8dd04f",
+									"https://github.com/openssl/openssl/commit/06d1dc3fa96a2ba5a3e22735a033012aadc9f0d6",
+									"https://github.com/openssl/openssl/commit/621f3729831b05ee828a3203eddb621d014ff2b2",
+									"https://github.com/openssl/openssl/commit/7dfcee2cd2a63b2c64b9b4b0850be64cb695b0a0",
+									"https://openssl-library.org/news/secadv/20240903.txt"
 								]
-							}
-						],
-						"relatedCves": [
+							},
 							{
-								"id": "CVE-2023-31484",
+								"id": "CVE-2024-41996",
 								"severity": "High",
-								"description": "CPAN.pm before 2.35 does not verify TLS certificates when downloading distributions over HTTPS.",
+								"description": "Validating the order of the public keys in the Diffie-Hellman Key Agreement Protocol, when an approved safe prime is used, allows remote attackers (from the client side) to trigger unnecessarily expensive server-side DHE modular-exponentiation calculations. The client may cause asymmetric resource consumption. The basic attack scenario is that the client must claim that it can only communicate with DHE, and the server must be configured to allow DHE and validate the order of the public key.",
 								"remediation": "",
 								"cvss-info": {
-									"base-score": 8.1,
-									"impact-score": 5.9,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2023/04/29/1",
-									"http://www.openwall.com/lists/oss-security/2023/05/03/3",
-									"http://www.openwall.com/lists/oss-security/2023/05/03/5",
-									"http://www.openwall.com/lists/oss-security/2023/05/07/2",
-									"https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/",
-									"https://github.com/andk/cpanpm/pull/175",
-									"https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BM6UW55CNFUTNGD5ZRKGUKKKFDJGMFHL/",
-									"https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LEGCEOKFJVBJ2QQ6S2H4NAEWTUERC7SB/",
-									"https://metacpan.org/dist/CPAN/changes",
-									"https://security.netapp.com/advisory/ntap-20240621-0007/",
-									"https://www.openwall.com/lists/oss-security/2023/04/18/14"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "perl-base",
-						"id": "deb@@perl-base@5.36.0-7+deb12u1",
-						"customUniqueKeyHash": "3C00934ACA393A466B769EB95FA8FCD2",
-						"category": "Package",
-						"severity": "High",
-						"description": "Package contains 1 CVEs: 0 Critical, 1 High, 0 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1:4.13+dfsg1-1+b1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "GPL-1"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-4641"
-								]
-							},
-							{
-								"id": "CVE-2023-29383",
-								"severity": "Low",
-								"description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-29383"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
+									"base-score": 7.5,
 									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+									"exploitability-score": 3.9,
+									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
 									"version": "3.1",
 									"metrics": null,
 									"source": "NVD"
@@ -580,933 +365,28 @@
 								"isFixedByPackageRemediation": false,
 								"source": "NVD",
 								"urls": [
-									"https://access.redhat.com/errata/RHSA-2023:6632",
-									"https://access.redhat.com/errata/RHSA-2023:7112",
-									"https://access.redhat.com/errata/RHSA-2024:0417",
-									"https://access.redhat.com/errata/RHSA-2024:2577",
-									"https://access.redhat.com/security/cve/CVE-2023-4641",
-									"https://bugzilla.redhat.com/show_bug.cgi?id=2215945"
-								]
-							},
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.7,
-									"impact-score": 3.6,
-									"exploitability-score": 1,
-									"vector-string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "RedHat"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://access.redhat.com/errata/RHSA-2023:6632",
-									"https://access.redhat.com/errata/RHSA-2023:7112",
-									"https://access.redhat.com/errata/RHSA-2024:0417",
-									"https://access.redhat.com/errata/RHSA-2024:2577",
-									"https://access.redhat.com/security/cve/CVE-2023-4641",
-									"https://bugzilla.redhat.com/show_bug.cgi?id=2215945"
-								]
-							},
-							{
-								"id": "CVE-2023-29383",
-								"severity": "Low",
-								"description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 3.3,
-									"impact-score": 1.4,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
-									"https://github.com/shadow-maint/shadow/pull/687",
-									"https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/cve-2023-29383-abusing-linux-chfn-to-misrepresent-etc-passwd/",
-									"https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=31797"
+									"https://dheatattack.gitlab.io/details/",
+									"https://dheatattack.gitlab.io/faq/",
+									"https://gist.github.com/c0r0n3r/abccc14d4d96c0442f3a77fa5ca255d1"
 								]
 							}
 						],
-						"isFixable": false,
+						"isFixable": true,
 						"type": "Package",
-						"name": "passwd",
-						"id": "deb@@passwd@1:4.13+dfsg1-1+b1",
-						"customUniqueKeyHash": "250761F0C4607EC0854774D9071EE87B",
+						"name": "libssl3t64",
+						"id": "deb@@libssl3t64@3.0.13-0ubuntu3.2",
+						"customUniqueKeyHash": "B3F223FF97B2782E42BBC60B1E1245A9",
 						"category": "Package",
 						"severity": "Medium",
-						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 1 Medium, 1 Low, 0 Unknown.",
-						"remediation": ""
+						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 2 Medium, 0 Low, 0 Unknown.",
+						"remediation": "Upgrade to 3.0.13-0ubuntu3.4 (fixes CVE-2024-6119 (Medium))"
 					},
 					{
 						"package-manager": {
 							"name": "deb",
 							"path": ""
 						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-50495"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-45918"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 6.5,
-									"impact-score": 3.6,
-									"exploitability-score": 2.8,
-									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LU4MYMKFEZQ5VSCVLRIZGDQOUW3T44GT/",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00020.html",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00029.html",
-									"https://security.netapp.com/advisory/ntap-20240119-0008/"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-06/msg00005.html",
-									"https://security.netapp.com/advisory/ntap-20240315-0006/"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "ncurses-bin",
-						"id": "deb@@ncurses-bin@6.4-4",
-						"customUniqueKeyHash": "CA5888F79E7DC3E3FC0F4D09C76A9D07",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 1 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-50495"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-45918"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 6.5,
-									"impact-score": 3.6,
-									"exploitability-score": 2.8,
-									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LU4MYMKFEZQ5VSCVLRIZGDQOUW3T44GT/",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00020.html",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00029.html",
-									"https://security.netapp.com/advisory/ntap-20240119-0008/"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-06/msg00005.html",
-									"https://security.netapp.com/advisory/ntap-20240315-0006/"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "ncurses-base",
-						"id": "deb@@ncurses-base@6.4-4",
-						"customUniqueKeyHash": "6932968E70F5240AA6D25371F7862FBF",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 1 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1:4.13+dfsg1-1+b1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "GPL-1"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-4641"
-								]
-							},
-							{
-								"id": "CVE-2023-29383",
-								"severity": "Low",
-								"description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-29383"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
-									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://access.redhat.com/errata/RHSA-2023:6632",
-									"https://access.redhat.com/errata/RHSA-2023:7112",
-									"https://access.redhat.com/errata/RHSA-2024:0417",
-									"https://access.redhat.com/errata/RHSA-2024:2577",
-									"https://access.redhat.com/security/cve/CVE-2023-4641",
-									"https://bugzilla.redhat.com/show_bug.cgi?id=2215945"
-								]
-							},
-							{
-								"id": "CVE-2023-4641",
-								"severity": "Medium",
-								"description": "A flaw was found in shadow-utils. When asking for a new password, shadow-utils asks the password twice. If the password fails on the second attempt, shadow-utils fails in cleaning the buffer used to store the first entry. This may allow an attacker with enough access to retrieve the password from the memory.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.7,
-									"impact-score": 3.6,
-									"exploitability-score": 1,
-									"vector-string": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "RedHat"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://access.redhat.com/errata/RHSA-2023:6632",
-									"https://access.redhat.com/errata/RHSA-2023:7112",
-									"https://access.redhat.com/errata/RHSA-2024:0417",
-									"https://access.redhat.com/errata/RHSA-2024:2577",
-									"https://access.redhat.com/security/cve/CVE-2023-4641",
-									"https://bugzilla.redhat.com/show_bug.cgi?id=2215945"
-								]
-							},
-							{
-								"id": "CVE-2023-29383",
-								"severity": "Low",
-								"description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 3.3,
-									"impact-score": 1.4,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
-									"https://github.com/shadow-maint/shadow/pull/687",
-									"https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/cve-2023-29383-abusing-linux-chfn-to-misrepresent-etc-passwd/",
-									"https://www.trustwave.com/en-us/resources/security-resources/security-advisories/?fid=31797"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "login",
-						"id": "deb@@login@1:4.13+dfsg1-1+b1",
-						"customUniqueKeyHash": "F2E8976637229F731B2C92818248DCAA",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 1 Medium, 1 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-50495"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-45918"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-50495",
-								"severity": "Medium",
-								"description": "NCurse v6.4-20230418 was discovered to contain a segmentation fault via the component _nc_wrap_entry().",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 6.5,
-									"impact-score": 3.6,
-									"exploitability-score": 2.8,
-									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/LU4MYMKFEZQ5VSCVLRIZGDQOUW3T44GT/",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00020.html",
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-04/msg00029.html",
-									"https://security.netapp.com/advisory/ntap-20240119-0008/"
-								]
-							},
-							{
-								"id": "CVE-2023-45918",
-								"severity": "Unknown",
-								"description": "ncurses 6.4-20230610 has a NULL pointer dereference in tgetstr in tinfo/lib_termcap.c.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://lists.gnu.org/archive/html/bug-ncurses/2023-06/msg00005.html",
-									"https://security.netapp.com/advisory/ntap-20240315-0006/"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libtinfo6",
-						"id": "deb@@libtinfo6@6.4-4",
-						"customUniqueKeyHash": "9545A25C44F6E05A1FDB2111545C4DCB",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 2 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 1 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "12.2.0-14",
-						"licenses": [
-							{
-								"value": "Artistic"
-							},
-							{
-								"value": "GFDL-1.2"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "LGPL"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains  that target AArch64 allows an attacker to exploit an existing buffer  overflow in dynamically-sized local variables in your application  without this being detected. This stack-protector failure only applies  to C99-style dynamically-sized local variables or those created using  alloca(). The stack-protector operates as intended for statically-sized  local variables.  The default behavior when the stack-protector  detects an overflow is to terminate your application, resulting in  controlled loss of availability. An attacker who can exploit a buffer  overflow without triggering the stack-protector might be able to change  program flow control to cause an uncontrolled loss of availability or to  go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-4039"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
-								]
-							},
-							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "arm.com"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libstdc++6",
-						"id": "deb@@libstdc++6@12.2.0-14",
-						"customUniqueKeyHash": "127C91194012495127B6ABCD8D6E3C95",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2024-22365"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
-									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2024/01/18/3",
-									"https://github.com/linux-pam/linux-pam",
-									"https://github.com/linux-pam/linux-pam/commit/031bb5a5d0d950253b68138b498dc93be69a64cb",
-									"https://github.com/linux-pam/linux-pam/releases/tag/v1.6.0"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libpam0g",
-						"id": "deb@@libpam0g@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "567E208777517EDB10C222ECFB5E59E7",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2024-22365"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
-									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2024/01/18/3",
-									"https://github.com/linux-pam/linux-pam",
-									"https://github.com/linux-pam/linux-pam/commit/031bb5a5d0d950253b68138b498dc93be69a64cb",
-									"https://github.com/linux-pam/linux-pam/releases/tag/v1.6.0"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libpam-runtime",
-						"id": "deb@@libpam-runtime@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "A938A9ECD470A1EC229E096E89718608",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2024-22365"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
-									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2024/01/18/3",
-									"https://github.com/linux-pam/linux-pam",
-									"https://github.com/linux-pam/linux-pam/commit/031bb5a5d0d950253b68138b498dc93be69a64cb",
-									"https://github.com/linux-pam/linux-pam/releases/tag/v1.6.0"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libpam-modules",
-						"id": "deb@@libpam-modules@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "43D89E13B101ABA41877F9BF0B869F9C",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"cves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"isFixedByPackageRemediation": false,
-								"source": "Debian",
-								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2024-22365"
-								]
-							}
-						],
-						"relatedCves": [
-							{
-								"id": "CVE-2024-22365",
-								"severity": "Medium",
-								"description": "linux-pam (aka Linux PAM) before 1.6.0 allows attackers to cause a denial of service (blocked login process) via mkfifo because the openat call (for protect_dir) lacks O_DIRECTORY.",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 5.5,
-									"impact-score": 3.6,
-									"exploitability-score": 1.8,
-									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-									"version": "3.1",
-									"metrics": null,
-									"source": "NVD"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"http://www.openwall.com/lists/oss-security/2024/01/18/3",
-									"https://github.com/linux-pam/linux-pam",
-									"https://github.com/linux-pam/linux-pam/commit/031bb5a5d0d950253b68138b498dc93be69a64cb",
-									"https://github.com/linux-pam/linux-pam/releases/tag/v1.6.0"
-								]
-							}
-						],
-						"isFixable": false,
-						"type": "Package",
-						"name": "libpam-modules-bin",
-						"id": "deb@@libpam-modules-bin@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "A47D24A2AF7BA85306719D907DE9BE07",
-						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.10.1-3",
+						"version": "1.10.3-2build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -1523,9 +403,9 @@
 								"description": "A timing-based side-channel flaw was found in libgcrypt's RSA implementation. This issue may allow a remote attacker to initiate a Bleichenbacher-style attack, which can lead to the decryption of RSA ciphertexts.",
 								"remediation": "",
 								"isFixedByPackageRemediation": false,
-								"source": "Debian",
+								"source": "Ubuntu",
 								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2024-2236"
+									"https://ubuntu.com/security/CVE-2024-2236"
 								]
 							}
 						],
@@ -1556,8 +436,8 @@
 						"isFixable": false,
 						"type": "Package",
 						"name": "libgcrypt20",
-						"id": "deb@@libgcrypt20@1.10.1-3",
-						"customUniqueKeyHash": "6027240C1348D67ACE9415B75BA2D410",
+						"id": "deb@@libgcrypt20@1.10.3-2build1",
+						"customUniqueKeyHash": "FFBA31D44B44ACA244D24A464533BE7F",
 						"category": "Package",
 						"severity": "Medium",
 						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
@@ -1568,52 +448,49 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "12.2.0-14",
+						"version": "10.42-4ubuntu2",
 						"licenses": [
 							{
-								"value": "Artistic"
+								"value": "BSD-2-clause"
 							},
 							{
-								"value": "GFDL-1.2"
+								"value": "BSD-3-clause"
 							},
 							{
-								"value": "GPL"
+								"value": "BSD-3-clause-Cambridge"
 							},
 							{
-								"value": "GPL-2"
+								"value": "X11"
 							},
 							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "LGPL"
+								"value": "public-domain"
 							}
 						],
 						"is-os-package": true,
 						"cves": [
 							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains  that target AArch64 allows an attacker to exploit an existing buffer  overflow in dynamically-sized local variables in your application  without this being detected. This stack-protector failure only applies  to C99-style dynamically-sized local variables or those created using  alloca(). The stack-protector operates as intended for statically-sized  local variables.  The default behavior when the stack-protector  detects an overflow is to terminate your application, resulting in  controlled loss of availability. An attacker who can exploit a buffer  overflow without triggering the stack-protector might be able to change  program flow control to cause an uncontrolled loss of availability or to  go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.",
+								"id": "CVE-2022-41409",
+								"severity": "Low",
+								"description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
 								"remediation": "",
 								"isFixedByPackageRemediation": false,
-								"source": "Debian",
+								"source": "Ubuntu",
 								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-4039"
+									"https://ubuntu.com/security/CVE-2022-41409"
 								]
 							}
 						],
 						"relatedCves": [
 							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
+								"id": "CVE-2022-41409",
+								"severity": "High",
+								"description": "Integer overflow vulnerability in pcre2test before 10.41 allows attackers to cause a denial of service or other unspecified impacts via negative input.",
 								"remediation": "",
 								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+									"base-score": 7.5,
+									"impact-score": 3.6,
+									"exploitability-score": 3.9,
+									"vector-string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
 									"version": "3.1",
 									"metrics": null,
 									"source": "NVD"
@@ -1621,40 +498,19 @@
 								"isFixedByPackageRemediation": false,
 								"source": "NVD",
 								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
-								]
-							},
-							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "arm.com"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
+									"https://github.com/PCRE2Project/pcre2/commit/94e1c001761373b7d9450768aa15d04c25547a35",
+									"https://github.com/PCRE2Project/pcre2/issues/141"
 								]
 							}
 						],
 						"isFixable": false,
 						"type": "Package",
-						"name": "libgcc-s1",
-						"id": "deb@@libgcc-s1@12.2.0-14",
-						"customUniqueKeyHash": "D62EA546F9CA9EED7DE72C5FBFF86FB5",
+						"name": "libpcre2-8-0",
+						"id": "deb@@libpcre2-8-0@10.42-4ubuntu2",
+						"customUniqueKeyHash": "6FB73956842B637DFECF781FBA79F7B7",
 						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
+						"severity": "Low",
+						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 0 Medium, 1 Low, 0 Unknown.",
 						"remediation": ""
 					},
 					{
@@ -1662,52 +518,76 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "12.2.0-14",
+						"version": "2.4.4-2ubuntu17",
 						"licenses": [
 							{
-								"value": "Artistic"
+								"value": "BSD-3-clause"
 							},
 							{
-								"value": "GFDL-1.2"
+								"value": "CC0-1.0"
 							},
 							{
-								"value": "GPL"
+								"value": "Expat"
 							},
 							{
-								"value": "GPL-2"
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-2.0"
 							},
 							{
 								"value": "GPL-3"
 							},
 							{
-								"value": "LGPL"
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							},
+							{
+								"value": "LGPL-3"
+							},
+							{
+								"value": "LGPL-3+"
+							},
+							{
+								"value": "RFC-Reference"
+							},
+							{
+								"value": "TinySCHEME"
+							},
+							{
+								"value": "permissive"
 							}
 						],
 						"is-os-package": true,
 						"cves": [
 							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains  that target AArch64 allows an attacker to exploit an existing buffer  overflow in dynamically-sized local variables in your application  without this being detected. This stack-protector failure only applies  to C99-style dynamically-sized local variables or those created using  alloca(). The stack-protector operates as intended for statically-sized  local variables.  The default behavior when the stack-protector  detects an overflow is to terminate your application, resulting in  controlled loss of availability. An attacker who can exploit a buffer  overflow without triggering the stack-protector might be able to change  program flow control to cause an uncontrolled loss of availability or to  go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.",
+								"id": "CVE-2022-3219",
+								"severity": "Low",
+								"description": "GnuPG can be made to spin on a relatively small input by (for example) crafting a public key with thousands of signatures attached, compressed down to just a few KB.",
 								"remediation": "",
 								"isFixedByPackageRemediation": false,
-								"source": "Debian",
+								"source": "Ubuntu",
 								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2023-4039"
+									"https://ubuntu.com/security/CVE-2022-3219"
 								]
 							}
 						],
 						"relatedCves": [
 							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
+								"id": "CVE-2022-3219",
+								"severity": "Low",
+								"description": "GnuPG can be made to spin on a relatively small input by (for example) crafting a public key with thousands of signatures attached, compressed down to just a few KB.",
 								"remediation": "",
 								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+									"base-score": 3.3,
+									"impact-score": 1.4,
+									"exploitability-score": 1.8,
+									"vector-string": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
 									"version": "3.1",
 									"metrics": null,
 									"source": "NVD"
@@ -1715,40 +595,23 @@
 								"isFixedByPackageRemediation": false,
 								"source": "NVD",
 								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
-								]
-							},
-							{
-								"id": "CVE-2023-4039",
-								"severity": "Medium",
-								"description": "\n\n**DISPUTED**A failure in the -fstack-protector feature in GCC-based toolchains \nthat target AArch64 allows an attacker to exploit an existing buffer \noverflow in dynamically-sized local variables in your application \nwithout this being detected. This stack-protector failure only applies \nto C99-style dynamically-sized local variables or those created using \nalloca(). The stack-protector operates as intended for statically-sized \nlocal variables.\n\nThe default behavior when the stack-protector \ndetects an overflow is to terminate your application, resulting in \ncontrolled loss of availability. An attacker who can exploit a buffer \noverflow without triggering the stack-protector might be able to change \nprogram flow control to cause an uncontrolled loss of availability or to\n go further and affect confidentiality or integrity. NOTE: The GCC project argues that this is a missed hardening bug and not a vulnerability by itself.\n\n\n\n\n\n",
-								"remediation": "",
-								"cvss-info": {
-									"base-score": 4.8,
-									"impact-score": 2.5,
-									"exploitability-score": 2.2,
-									"vector-string": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-									"version": "3.1",
-									"metrics": null,
-									"source": "arm.com"
-								},
-								"isFixedByPackageRemediation": false,
-								"source": "NVD",
-								"urls": [
-									"https://developer.arm.com/Arm%20Security%20Center/GCC%20Stack%20Protector%20Vulnerability%20AArch64",
-									"https://github.com/metaredteam/external-disclosures/security/advisories/GHSA-x7ch-h5rf-w2mf"
+									"https://access.redhat.com/security/cve/CVE-2022-3219",
+									"https://bugzilla.redhat.com/show_bug.cgi?id=2127010",
+									"https://dev.gnupg.org/D556",
+									"https://dev.gnupg.org/T5993",
+									"https://marc.info/?l=oss-security\u0026m=165696590211434\u0026w=4",
+									"https://security.netapp.com/advisory/ntap-20230324-0001/"
 								]
 							}
 						],
 						"isFixable": false,
 						"type": "Package",
-						"name": "gcc-12-base",
-						"id": "deb@@gcc-12-base@12.2.0-14",
-						"customUniqueKeyHash": "45C88F75AE14223E29796E4FDE19BD9F",
+						"name": "gpgv",
+						"id": "deb@@gpgv@2.4.4-2ubuntu17",
+						"customUniqueKeyHash": "9EAD6795A178B19737098B364C14F069",
 						"category": "Package",
-						"severity": "Medium",
-						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 1 Medium, 0 Low, 0 Unknown.",
+						"severity": "Low",
+						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 0 Medium, 1 Low, 0 Unknown.",
 						"remediation": ""
 					},
 					{
@@ -1756,7 +619,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "9.1-1",
+						"version": "9.4-3ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-4-clause-UC"
@@ -1788,9 +651,9 @@
 								"description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
 								"remediation": "",
 								"isFixedByPackageRemediation": false,
-								"source": "Debian",
+								"source": "Ubuntu",
 								"urls": [
-									"https://security-tracker.debian.org/tracker/CVE-2016-2781"
+									"https://ubuntu.com/security/CVE-2016-2781"
 								]
 							}
 						],
@@ -1821,8 +684,8 @@
 						"isFixable": false,
 						"type": "Package",
 						"name": "coreutils",
-						"id": "deb@@coreutils@9.1-1",
-						"customUniqueKeyHash": "4917A051AAC72ABBBD04090C2E7BBCBA",
+						"id": "deb@@coreutils@9.4-3ubuntu6",
+						"customUniqueKeyHash": "1DB44F7BBA7C1493169330BA1942F0A9",
 						"category": "Package",
 						"severity": "Low",
 						"description": "Package contains 1 CVEs: 0 Critical, 0 High, 0 Medium, 1 Low, 0 Unknown.",
@@ -1835,7 +698,28 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "1:1.3.dfsg-3.1ubuntu2",
+						"licenses": [
+							{
+								"value": "Zlib"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "zlib1g",
+						"id": "deb@@zlib1g@1:1.3.dfsg-3.1ubuntu2",
+						"customUniqueKeyHash": "464BABD1021CC50D3F9B36D8C24F2BCF",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -1890,8 +774,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "util-linux",
-						"id": "deb@@util-linux@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "3A65829E942A6E5D327250F65B0942AD",
+						"id": "deb@@util-linux@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "B8025310BCA2F1AB8136B8CE187998B5",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -1901,17 +785,29 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "2023.11.28.1",
 						"licenses": [
 							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-4-clause"
-							},
-							{
-								"value": "BSLA"
-							},
+								"value": "GPL"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "ubuntu-keyring",
+						"id": "deb@@ubuntu-keyring@2023.11.28.1",
+						"customUniqueKeyHash": "2D55BB41D1432F8134CC2D240392254A",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.35+dfsg-3build1",
+						"licenses": [
 							{
 								"value": "GPL-2"
 							},
@@ -1923,15 +819,6 @@
 							},
 							{
 								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
 							},
 							{
 								"value": "LGPL-2.1"
@@ -1944,101 +831,14 @@
 							},
 							{
 								"value": "LGPL-3+"
-							},
-							{
-								"value": "MIT"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "util-linux-extra",
-						"id": "deb@@util-linux-extra@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "5B2D0DFEA6E67DECB68D7210F577D879",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "37~deb12u1",
-						"licenses": [
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "usr-is-merged",
-						"id": "deb@@usr-is-merged@37~deb12u1",
-						"customUniqueKeyHash": "2F15A13CDAA9B35B0ECEB0E8F89E25B4",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "2024a-0+deb12u1",
-						"licenses": [
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "tzdata",
-						"id": "deb@@tzdata@2024a-0+deb12u1",
-						"customUniqueKeyHash": "A33F73CCAB1DE5BB566FFF089D907F1C",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.34+dfsg-1.2+deb12u1",
-						"licenses": [
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-3"
-							},
-							{
-								"value": "LGPL-3+"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "tar",
-						"id": "deb@@tar@1.34+dfsg-1.2+deb12u1",
-						"customUniqueKeyHash": "6E14623AD87A5621E8A9663477387337",
+						"id": "deb@@tar@1.35+dfsg-3build1",
+						"customUniqueKeyHash": "84BF4311641BD2CF26ECBADF814868C1",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2048,7 +848,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.06-4",
+						"version": "3.08-6ubuntu3",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -2064,14 +864,20 @@
 							},
 							{
 								"value": "GPL-3.0"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "sysvinit-utils",
-						"id": "deb@@sysvinit-utils@3.06-4",
-						"customUniqueKeyHash": "DF0B88D95B5A9D46BAAE585EA03CF7F0",
+						"id": "deb@@sysvinit-utils@3.08-6ubuntu3",
+						"customUniqueKeyHash": "5745ADD5F56A47874E150BEBC7A5D456",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2081,7 +887,43 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "4.9-1",
+						"version": "0.0.22",
+						"licenses": [
+							{
+								"value": "All-permissive"
+							},
+							{
+								"value": "BSD-2-clause"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "configure"
+							},
+							{
+								"value": "installsh"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "sensible-utils",
+						"id": "deb@@sensible-utils@0.0.22",
+						"customUniqueKeyHash": "327EFDB0CAF9259010DF5262A25676BE",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "4.9-2build1",
 						"licenses": [
 							{
 								"value": "BSD-4-clause-UC"
@@ -2115,8 +957,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "sed",
-						"id": "deb@@sed@4.9-1",
-						"customUniqueKeyHash": "0CD21B5F78E54BD3D4331B469B7F0C62",
+						"id": "deb@@sed@4.9-2build1",
+						"customUniqueKeyHash": "96A86ECE7DD72E1D3C25C09D036911BB",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2126,7 +968,217 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "2:4.0.4-4ubuntu3",
+						"licenses": [
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2.0+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2.0+"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "procps",
+						"id": "deb@@procps@2:4.0.4-4ubuntu3",
+						"customUniqueKeyHash": "13E5B865692F67912EDCFBD6BFCB4B2F",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "5.38.2-3.2build2",
+						"licenses": [
+							{
+								"value": "Artistic"
+							},
+							{
+								"value": "Artistic-2"
+							},
+							{
+								"value": "Artistic-dist"
+							},
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "BSD-3-clause-GENERIC"
+							},
+							{
+								"value": "BSD-3-clause-with-weird-numbering"
+							},
+							{
+								"value": "BSD-4-clause-POWERDOG"
+							},
+							{
+								"value": "BZIP"
+							},
+							{
+								"value": "DONT-CHANGE-THE-GPL"
+							},
+							{
+								"value": "Expat"
+							},
+							{
+								"value": "FSFAP"
+							},
+							{
+								"value": "GPL-1"
+							},
+							{
+								"value": "GPL-1+"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3+-WITH-BISON-EXCEPTION"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "REGCOMP"
+							},
+							{
+								"value": "REGCOMP,"
+							},
+							{
+								"value": "SDBM-PUBLIC-DOMAIN"
+							},
+							{
+								"value": "TEXT-TABS"
+							},
+							{
+								"value": "Unicode"
+							},
+							{
+								"value": "ZLIB"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "perl-base",
+						"id": "deb@@perl-base@5.38.2-3.2build2",
+						"customUniqueKeyHash": "511D1CBA5161AC024EBA97DF27605F64",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1:4.13+dfsg1-4ubuntu3",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "GPL-1"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "passwd",
+						"id": "deb@@passwd@1:4.13+dfsg1-4ubuntu3",
+						"customUniqueKeyHash": "D43EE7EB6BAAD618155ABB818A890086",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "6.4+20240113-1ubuntu2",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "MIT/X11"
+							},
+							{
+								"value": "X11"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "ncurses-bin",
+						"id": "deb@@ncurses-bin@6.4+20240113-1ubuntu2",
+						"customUniqueKeyHash": "80D45D4F78B353B98DDA527A734F0748",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "6.4+20240113-1ubuntu2",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "MIT/X11"
+							},
+							{
+								"value": "X11"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "ncurses-base",
+						"id": "deb@@ncurses-base@6.4+20240113-1ubuntu2",
+						"customUniqueKeyHash": "6A2E859551D6BE6278B7784C2E00CBC6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -2181,8 +1233,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "mount",
-						"id": "deb@@mount@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "3A72234DC63BFB73D42F00E9B6509B57",
+						"id": "deb@@mount@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "066A9B3CACF669377713CE4183F6152D",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2192,13 +1244,16 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.3.4.20200120-3.1",
+						"version": "1.3.4.20240123-1build1",
 						"licenses": [
 							{
 								"value": "CC-BY-3.0"
 							},
 							{
 								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2.0-only"
 							},
 							{
 								"value": "X11"
@@ -2208,8 +1263,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "mawk",
-						"id": "deb@@mawk@1.3.4.20200120-3.1",
-						"customUniqueKeyHash": "E4CC614CFB6F4A0F289E80C9D44AC61B",
+						"id": "deb@@mawk@1.3.4.20240123-1build1",
+						"customUniqueKeyHash": "508FD9AE26E0C791ED1C4B7FCB0C2FB0",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2219,7 +1274,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.47.0-2",
+						"version": "1.47.0-2.4~exp1ubuntu4",
 						"licenses": [
 							{
 								"value": "Apache-2"
@@ -2256,8 +1311,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "logsave",
-						"id": "deb@@logsave@1.47.0-2",
-						"customUniqueKeyHash": "E89EC16059EA5B9BC9B1B77D64C94C43",
+						"id": "deb@@logsave@1.47.0-2.4~exp1ubuntu4",
+						"customUniqueKeyHash": "82DF37E1C214F43BD0C3A2572CA738E1",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2267,7 +1322,40 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.5.4+dfsg2-5",
+						"version": "1:4.13+dfsg1-4ubuntu3",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "GPL-1"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "login",
+						"id": "deb@@login@1:4.13+dfsg1-4ubuntu3",
+						"customUniqueKeyHash": "F8EE099D9E94FA7369F309439F84F780",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.5.5+dfsg2-2build1",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -2286,8 +1374,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libzstd1",
-						"id": "deb@@libzstd1@1.5.4+dfsg2-5",
-						"customUniqueKeyHash": "88FC7BD0B9F0EB73F393EBFC003E5EBF",
+						"id": "deb@@libzstd1@1.5.5+dfsg2-2build1",
+						"customUniqueKeyHash": "056B2EB5317270134D0EEC3DFC726E57",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2297,21 +1385,24 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "0.8.1-1",
+						"version": "0.8.2-2build1",
 						"licenses": [
 							{
 								"value": "BSD-2-clause"
 							},
 							{
 								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libxxhash0",
-						"id": "deb@@libxxhash0@0.8.1-1",
-						"customUniqueKeyHash": "862C25CA2482D6442A8F99FAE486C98D",
+						"id": "deb@@libxxhash0@0.8.2-2build1",
+						"customUniqueKeyHash": "1E9AF6AA63515FD72839562D82590E0E",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2321,7 +1412,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -2376,8 +1467,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libuuid1",
-						"id": "deb@@libuuid1@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "9C3C8634937649EB80E54919FC33E982",
+						"id": "deb@@libuuid1@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "434F1086304840C67D48C148B1D637E0",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2387,7 +1478,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.0-2",
+						"version": "1.1-2build1",
 						"licenses": [
 							{
 								"value": "FreeSoftware"
@@ -2396,7 +1487,7 @@
 								"value": "GFDL-1.2"
 							},
 							{
-								"value": "GFDL-1.2+"
+								"value": "GFDL-NIV-1.2+"
 							},
 							{
 								"value": "GPL-2"
@@ -2417,15 +1508,15 @@
 								"value": "LGPL-3+"
 							},
 							{
-								"value": "MIT"
+								"value": "X11"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libunistring2",
-						"id": "deb@@libunistring2@1.0-2",
-						"customUniqueKeyHash": "0E75B98DD183A14A3202C424EB483DE9",
+						"name": "libunistring5",
+						"id": "deb@@libunistring5@1.1-2build1",
+						"customUniqueKeyHash": "C12C3B3031F3EF4DFC84FE0431DC95BE",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2435,7 +1526,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "252.30-1~deb12u2",
+						"version": "255.4-1ubuntu8.2",
 						"licenses": [
 							{
 								"value": "CC0-1.0"
@@ -2463,8 +1554,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libudev1",
-						"id": "deb@@libudev1@252.30-1~deb12u2",
-						"customUniqueKeyHash": "503CFD79C4C01A20784B2EBB00C308FC",
+						"id": "deb@@libudev1@255.4-1ubuntu8.2",
+						"customUniqueKeyHash": "FCD946C677373562F68C2C2F91D52C9D",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2474,7 +1565,34 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "4.19.0-2",
+						"version": "6.4+20240113-1ubuntu2",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "MIT/X11"
+							},
+							{
+								"value": "X11"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libtinfo6",
+						"id": "deb@@libtinfo6@6.4+20240113-1ubuntu2",
+						"customUniqueKeyHash": "6B25DF40930A6817362428AA12A5AA12",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "4.19.0-3build1",
 						"licenses": [
 							{
 								"value": "GFDL-1.3"
@@ -2493,8 +1611,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libtasn1-6",
-						"id": "deb@@libtasn1-6@4.19.0-2",
-						"customUniqueKeyHash": "D695864688DBE44B428D26156DA8CD9C",
+						"id": "deb@@libtasn1-6@4.19.0-3build1",
+						"customUniqueKeyHash": "EFBE60792841672046AB6CCDAEF07C76",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2504,7 +1622,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "252.30-1~deb12u2",
+						"version": "255.4-1ubuntu8.2",
 						"licenses": [
 							{
 								"value": "CC0-1.0"
@@ -2532,8 +1650,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libsystemd0",
-						"id": "deb@@libsystemd0@252.30-1~deb12u2",
-						"customUniqueKeyHash": "4EF6F55BA2E32DE2623315A61C282550",
+						"id": "deb@@libsystemd0@255.4-1ubuntu8.2",
+						"customUniqueKeyHash": "1837D558AF25C7D4BB7509DE4D4BE0C9",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2543,7 +1661,40 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.47.0-2",
+						"version": "14-20240412-0ubuntu1",
+						"licenses": [
+							{
+								"value": "Artistic"
+							},
+							{
+								"value": "GFDL-1.2"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "LGPL"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libstdc++6",
+						"id": "deb@@libstdc++6@14-20240412-0ubuntu1",
+						"customUniqueKeyHash": "493C47D5C4C8A589DF9C7DE427FF371D",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.47.0-2.4~exp1ubuntu4",
 						"licenses": [
 							{
 								"value": "Apache-2"
@@ -2580,8 +1731,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libss2",
-						"id": "deb@@libss2@1.47.0-2",
-						"customUniqueKeyHash": "AFF8E25D8BBA040765A5C5E30AB04466",
+						"id": "deb@@libss2@1.47.0-2.4~exp1ubuntu4",
+						"customUniqueKeyHash": "CA5CAEAF84987DFB13CFCA02DD400B36",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2591,7 +1742,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -2646,8 +1797,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libsmartcols1",
-						"id": "deb@@libsmartcols1@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "85F4D5A429A23FA19423A69C4AD3C8F2",
+						"id": "deb@@libsmartcols1@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "70D6C88DB5636B64C93489C5F28F67EB",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2657,7 +1808,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.4-2.1",
+						"version": "3.5-2build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -2679,8 +1830,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libsepol2",
-						"id": "deb@@libsepol2@3.4-2.1",
-						"customUniqueKeyHash": "2C69DA78BC651E23857598E53E452D8A",
+						"id": "deb@@libsepol2@3.5-2build1",
+						"customUniqueKeyHash": "ADFA01CEFC9EB9F78E95AACD3F9681B0",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2690,69 +1841,24 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.4-1+b5",
-						"licenses": [
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "LGPL"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libsemanage2",
-						"id": "deb@@libsemanage2@3.4-1+b5",
-						"customUniqueKeyHash": "9906A71B3735490107F72EE880FC7E82",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "3.4-1",
-						"licenses": [
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "LGPL"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libsemanage-common",
-						"id": "deb@@libsemanage-common@3.4-1",
-						"customUniqueKeyHash": "BD2B6EF01C5A8D1DA7B15800926A194A",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "3.4-1+b6",
+						"version": "3.5-1build5",
 						"licenses": [
 							{
 								"value": "GPL-2"
 							},
 							{
 								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libselinux1",
-						"id": "deb@@libselinux1@3.4-1+b6",
-						"customUniqueKeyHash": "EF18C3CE76D1AB70F86FB380925E37FF",
+						"name": "libsemanage2",
+						"id": "deb@@libsemanage2@3.5-1build5",
+						"customUniqueKeyHash": "2A18286576522B254F677A9DC5E2F711",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2762,7 +1868,58 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.5.4-1+deb12u1",
+						"version": "3.5-1build5",
+						"licenses": [
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libsemanage-common",
+						"id": "deb@@libsemanage-common@3.5-1build5",
+						"customUniqueKeyHash": "7E294B5FD17118651780B1F9F3DFDBD6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "3.5-2ubuntu2",
+						"licenses": [
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libselinux1",
+						"id": "deb@@libselinux1@3.5-2ubuntu2",
+						"customUniqueKeyHash": "E54FD6B33C339A6015315FC33F4F2AA4",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "2.5.5-1ubuntu3",
 						"licenses": [
 							{
 								"value": "LGPL-2.1"
@@ -2772,8 +1929,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libseccomp2",
-						"id": "deb@@libseccomp2@2.5.4-1+deb12u1",
-						"customUniqueKeyHash": "585D52D91455F86EE393E974236DF948",
+						"id": "deb@@libseccomp2@2.5.5-1ubuntu3",
+						"customUniqueKeyHash": "7966DCEAF82F7CE3E8E0963776757433",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2783,19 +1940,73 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "10.42-1",
+						"version": "2:4.0.4-4ubuntu3",
 						"licenses": [
 							{
-								"value": "BSD-2-clause"
+								"value": "GPL-2"
 							},
+							{
+								"value": "GPL-2.0+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2.0+"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libproc2-0",
+						"id": "deb@@libproc2-0@2:4.0.4-4ubuntu3",
+						"customUniqueKeyHash": "235CB3621B2AA51764960BAEE3BCD539",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.5.3-5ubuntu5.1",
+						"licenses": [
 							{
 								"value": "BSD-3-clause"
 							},
 							{
-								"value": "BSD-3-clause-Cambridge"
+								"value": "BSD-tcp_wrappers"
 							},
 							{
-								"value": "X11"
+								"value": "Beerware"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2+"
 							},
 							{
 								"value": "public-domain"
@@ -2804,9 +2015,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libpcre2-8-0",
-						"id": "deb@@libpcre2-8-0@10.42-1",
-						"customUniqueKeyHash": "48EED1CC36D0E36B3281FD9D690DA55C",
+						"name": "libpam0g",
+						"id": "deb@@libpam0g@1.5.3-5ubuntu5.1",
+						"customUniqueKeyHash": "2EFE9AA58934659D8EE2F343CD0A7774",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2816,19 +2027,181 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "0.24.1-2",
+						"version": "1.5.3-5ubuntu5.1",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "BSD-tcp_wrappers"
+							},
+							{
+								"value": "Beerware"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2+"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libpam-runtime",
+						"id": "deb@@libpam-runtime@1.5.3-5ubuntu5.1",
+						"customUniqueKeyHash": "C725A9A416DA2A9C1854AF04C87862DA",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.5.3-5ubuntu5.1",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "BSD-tcp_wrappers"
+							},
+							{
+								"value": "Beerware"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2+"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libpam-modules",
+						"id": "deb@@libpam-modules@1.5.3-5ubuntu5.1",
+						"customUniqueKeyHash": "3FE9E5341AA54AD6E89D33244B94734F",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "1.5.3-5ubuntu5.1",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "BSD-tcp_wrappers"
+							},
+							{
+								"value": "Beerware"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2"
+							},
+							{
+								"value": "LGPL-2+"
+							},
+							{
+								"value": "public-domain"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libpam-modules-bin",
+						"id": "deb@@libpam-modules-bin@1.5.3-5ubuntu5.1",
+						"customUniqueKeyHash": "5CBB48C9E14920553B4DD7547D34C1F6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "0.25.3-4ubuntu2",
 						"licenses": [
 							{
 								"value": "Apache-2.0"
 							},
 							{
-								"value": "BSD-3-Clause"
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "FSFAP"
+							},
+							{
+								"value": "FSFULLR"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3+"
 							},
 							{
 								"value": "ISC"
-							},
-							{
-								"value": "ISC+IBM"
 							},
 							{
 								"value": "LGPL-2.1"
@@ -2837,18 +2210,21 @@
 								"value": "LGPL-2.1+"
 							},
 							{
-								"value": "permissive-like-automake-output"
+								"value": "X11"
 							},
 							{
-								"value": "same-as-rest-of-p11kit"
+								"value": "customFSFUL"
+							},
+							{
+								"value": "customFSFULLRWD"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libp11-kit0",
-						"id": "deb@@libp11-kit0@0.24.1-2",
-						"customUniqueKeyHash": "BDEAB778480FCBC33D24E2979F7E0591",
+						"id": "deb@@libp11-kit0@0.25.3-4ubuntu2",
+						"customUniqueKeyHash": "F2CBB64F5BA1C62EF47970FC8399FFD1",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2858,7 +2234,31 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.8.1-2",
+						"version": "1.6-3.1build1",
+						"licenses": [
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libnpth0t64",
+						"id": "deb@@libnpth0t64@1.6-3.1build1",
+						"customUniqueKeyHash": "2F84149B05AC05E8601232437E988FF7",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "3.9.1-2.2build1",
 						"licenses": [
 							{
 								"value": "Expat"
@@ -2897,9 +2297,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libnettle8",
-						"id": "deb@@libnettle8@3.8.1-2",
-						"customUniqueKeyHash": "1AF7CFAE69E5DE69F264B4971758B26F",
+						"name": "libnettle8t64",
+						"id": "deb@@libnettle8t64@3.9.1-2.2build1",
+						"customUniqueKeyHash": "03613D5582FB875A528CA55D2741DDD9",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2909,7 +2309,34 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "6.4+20240113-1ubuntu2",
+						"licenses": [
+							{
+								"value": "BSD-3-clause"
+							},
+							{
+								"value": "MIT/X11"
+							},
+							{
+								"value": "X11"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libncursesw6",
+						"id": "deb@@libncursesw6@6.4+20240113-1ubuntu2",
+						"customUniqueKeyHash": "6CDD9C4B384885618923ED9BCAA5D749",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -2964,8 +2391,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libmount1",
-						"id": "deb@@libmount1@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "A5C83B20676963B4F58B589E39FECDA5",
+						"id": "deb@@libmount1@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "B31273A662D49C8CD5CEBC71E79317E3",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -2975,7 +2402,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.0.4-2",
+						"version": "1.1.0-2build1",
 						"licenses": [
 							{
 								"value": "BSD-2-clause"
@@ -3009,8 +2436,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libmd0",
-						"id": "deb@@libmd0@1.0.4-2",
-						"customUniqueKeyHash": "5111C4A27F13B6DBFB204BFCEBB5ED3F",
+						"id": "deb@@libmd0@1.1.0-2build1",
+						"customUniqueKeyHash": "334EEC3B1C17E6D5D6FAEF5485FF9637",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3020,7 +2447,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "5.4.1-0.2",
+						"version": "5.6.1+really5.4.5-1",
 						"licenses": [
 							{
 								"value": "Autoconf"
@@ -3069,8 +2496,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "liblzma5",
-						"id": "deb@@liblzma5@5.4.1-0.2",
-						"customUniqueKeyHash": "6401A0F1EE96630A58B98F1B32ABB17D",
+						"id": "deb@@liblzma5@5.6.1+really5.4.5-1",
+						"customUniqueKeyHash": "3D5F3D419B23E82B210619B035A8A88C",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3080,7 +2507,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.9.4-1",
+						"version": "1.9.4-1build1",
 						"licenses": [
 							{
 								"value": "BSD-2-clause"
@@ -3096,8 +2523,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "liblz4-1",
-						"id": "deb@@liblz4-1@1.9.4-1",
-						"customUniqueKeyHash": "5428FAA28B5D23208CC769ADFA24396B",
+						"id": "deb@@liblz4-1@1.9.4-1build1",
+						"customUniqueKeyHash": "18922C708B36EFFC1F1367BE3F22E649",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3107,7 +2534,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.3.3-1+b1",
+						"version": "2.3.7-2build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3135,8 +2562,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libidn2-0",
-						"id": "deb@@libidn2-0@2.3.3-1+b1",
-						"customUniqueKeyHash": "03424D955D403DCDEDF4BB37AB645B9A",
+						"id": "deb@@libidn2-0@2.3.7-2build1",
+						"customUniqueKeyHash": "8B3F39B6A956A34F735DD3970771E7C5",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3146,7 +2573,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.8.1-2",
+						"version": "3.9.1-2.2build1",
 						"licenses": [
 							{
 								"value": "Expat"
@@ -3185,9 +2612,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libhogweed6",
-						"id": "deb@@libhogweed6@3.8.1-2",
-						"customUniqueKeyHash": "FBD1C05BCACE49ACFCE3B325E2FBADD3",
+						"name": "libhogweed6t64",
+						"id": "deb@@libhogweed6t64@3.9.1-2.2build1",
+						"customUniqueKeyHash": "80BA2C7CF55A15080341B1DC0B125087",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3197,7 +2624,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.46-1",
+						"version": "1.47-3build2",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -3222,8 +2649,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libgpg-error0",
-						"id": "deb@@libgpg-error0@1.46-1",
-						"customUniqueKeyHash": "74532B4F9C2940ABFEFA02CCF013A80D",
+						"id": "deb@@libgpg-error0@1.47-3build2",
+						"customUniqueKeyHash": "094ABD788E3F43F7C2476B53E8223BFA",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3233,7 +2660,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.7.9-2+deb12u3",
+						"version": "3.8.3-1.1ubuntu3.1",
 						"licenses": [
 							{
 								"value": "Apache-2.0"
@@ -3278,9 +2705,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libgnutls30",
-						"id": "deb@@libgnutls30@3.7.9-2+deb12u3",
-						"customUniqueKeyHash": "C0ACBC49174F9242830263BC938D7E1F",
+						"name": "libgnutls30t64",
+						"id": "deb@@libgnutls30t64@3.8.3-1.1ubuntu3.1",
+						"customUniqueKeyHash": "B0A10987D69C70991EE7B9DC262C8693",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3290,7 +2717,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2:6.2.1+dfsg1-1.1",
+						"version": "2:6.3.0+dfsg-2ubuntu6",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3315,8 +2742,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libgmp10",
-						"id": "deb@@libgmp10@2:6.2.1+dfsg1-1.1",
-						"customUniqueKeyHash": "8DAC199ABF093A7656D3BE1A80AF79BF",
+						"id": "deb@@libgmp10@2:6.3.0+dfsg-2ubuntu6",
+						"customUniqueKeyHash": "B2D7DB1513A526FCBA0DF25F6383FDBB",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3326,7 +2753,40 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.4.4-1",
+						"version": "14-20240412-0ubuntu1",
+						"licenses": [
+							{
+								"value": "Artistic"
+							},
+							{
+								"value": "GFDL-1.2"
+							},
+							{
+								"value": "GPL"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "LGPL"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libgcc-s1",
+						"id": "deb@@libgcc-s1@14-20240412-0ubuntu1",
+						"customUniqueKeyHash": "B1F79B8D297574034041DBD3EA3A0B38",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "3.4.6-1build1",
 						"licenses": [
 							{
 								"value": "Expat"
@@ -3354,8 +2814,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libffi8",
-						"id": "deb@@libffi8@3.4.4-1",
-						"customUniqueKeyHash": "AEECF7B682C7CBAA89B2EB724FA43D74",
+						"id": "deb@@libffi8@3.4.6-1build1",
+						"customUniqueKeyHash": "099A363BF0C2DAD0DA4A3EE5AEA79E98",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3365,7 +2825,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.47.0-2",
+						"version": "1.47.0-2.4~exp1ubuntu4",
 						"licenses": [
 							{
 								"value": "Apache-2"
@@ -3401,9 +2861,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libext2fs2",
-						"id": "deb@@libext2fs2@1.47.0-2",
-						"customUniqueKeyHash": "4C8710595E42260682C755B411BBBE20",
+						"name": "libext2fs2t64",
+						"id": "deb@@libext2fs2t64@1.47.0-2.4~exp1ubuntu4",
+						"customUniqueKeyHash": "B61D41B17E3D91C6CB56B6382B0D432F",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3413,7 +2873,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "0.270",
+						"version": "0.271ubuntu3",
 						"licenses": [
 							{
 								"value": "BSD-2-Clause"
@@ -3432,8 +2892,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libdebconfclient0",
-						"id": "deb@@libdebconfclient0@0.270",
-						"customUniqueKeyHash": "5402472DB1C9827439B24B945AE936E2",
+						"id": "deb@@libdebconfclient0@0.271ubuntu3",
+						"customUniqueKeyHash": "9F10E27C8DC771FDC2FAC44FE2D870A2",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3443,7 +2903,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "5.3.28+dfsg2-1",
+						"version": "5.3.28+dfsg2-7",
 						"licenses": [
 							{
 								"value": "Artistic"
@@ -3482,9 +2942,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libdb5.3",
-						"id": "deb@@libdb5.3@5.3.28+dfsg2-1",
-						"customUniqueKeyHash": "212AB2A72D0CA56ACC353611DD4A00E5",
+						"name": "libdb5.3t64",
+						"id": "deb@@libdb5.3t64@5.3.28+dfsg2-7",
+						"customUniqueKeyHash": "72DAEFC5C78EBE3A5084F0A45F245D39",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3494,13 +2954,13 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:4.4.33-2",
+						"version": "1:4.4.36-4build1",
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libcrypt1",
-						"id": "deb@@libcrypt1@1:4.4.33-2",
-						"customUniqueKeyHash": "1F9CED3E47B05361A2E52D9EF905A282",
+						"id": "deb@@libcrypt1@1:4.4.36-4build1",
+						"customUniqueKeyHash": "90A73E4551968A89359745D9626FB527",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3510,7 +2970,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.47.0-2",
+						"version": "1.47.0-2.4~exp1ubuntu4",
 						"licenses": [
 							{
 								"value": "Apache-2"
@@ -3547,8 +3007,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libcom-err2",
-						"id": "deb@@libcom-err2@1.47.0-2",
-						"customUniqueKeyHash": "D03B10DE8BDF9EB03D12EBF8868B6549",
+						"id": "deb@@libcom-err2@1.47.0-2.4~exp1ubuntu4",
+						"customUniqueKeyHash": "C5F721E9DDBB40C084E402F24F957ED9",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3558,7 +3018,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:2.66-4",
+						"version": "1:2.66-5ubuntu2",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -3574,8 +3034,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libcap2",
-						"id": "deb@@libcap2@1:2.66-4",
-						"customUniqueKeyHash": "B3920B51D121FF50586C610C463EA949",
+						"id": "deb@@libcap2@1:2.66-5ubuntu2",
+						"customUniqueKeyHash": "6DD81B8877957CD45EAAF994073E641F",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3585,7 +3045,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "0.8.3-1+b3",
+						"version": "0.8.4-2build2",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3607,8 +3067,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libcap-ng0",
-						"id": "deb@@libcap-ng0@0.8.3-1+b3",
-						"customUniqueKeyHash": "9CCF0095946EDC0A3FE1D41B06123345",
+						"id": "deb@@libcap-ng0@0.8.4-2build2",
+						"customUniqueKeyHash": "61728EC226D557BC5D73E6ECA465937B",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3618,8 +3078,11 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.36-9+deb12u8",
+						"version": "2.39-0ubuntu8.2",
 						"licenses": [
+							{
+								"value": "GFDL-1.3"
+							},
 							{
 								"value": "GPL-2"
 							},
@@ -3631,8 +3094,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libc6",
-						"id": "deb@@libc6@2.36-9+deb12u8",
-						"customUniqueKeyHash": "91717C758C5C45468E68D58E2F84939D",
+						"id": "deb@@libc6@2.39-0ubuntu8.2",
+						"customUniqueKeyHash": "7814A542234C41390300DA25E18AD0B9",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3642,8 +3105,11 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.36-9+deb12u8",
+						"version": "2.39-0ubuntu8.2",
 						"licenses": [
+							{
+								"value": "GFDL-1.3"
+							},
 							{
 								"value": "GPL-2"
 							},
@@ -3655,8 +3121,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libc-bin",
-						"id": "deb@@libc-bin@2.36-9+deb12u8",
-						"customUniqueKeyHash": "BE54A8DF0789EF5DE50C09E5B84DD480",
+						"id": "deb@@libc-bin@2.39-0ubuntu8.2",
+						"customUniqueKeyHash": "22BD3A0DCD4D0F9FD58C28AD7FDFD40F",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3666,7 +3132,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.0.8-5+b1",
+						"version": "1.0.8-5.1",
 						"licenses": [
 							{
 								"value": "BSD-variant"
@@ -3679,8 +3145,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libbz2-1.0",
-						"id": "deb@@libbz2-1.0@1.0.8-5+b1",
-						"customUniqueKeyHash": "C3C36E91619BB831242E40CF6A006E68",
+						"id": "deb@@libbz2-1.0@1.0.8-5.1",
+						"customUniqueKeyHash": "372F16046F978E4C3333275E82601B0E",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3690,7 +3156,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.38.1-5+deb12u1",
+						"version": "2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -3745,8 +3211,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libblkid1",
-						"id": "deb@@libblkid1@2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "6E8B68C57C69EA68D3569507F600FA3A",
+						"id": "deb@@libblkid1@2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "5F98A9A950C861C8EA9DD76CA7527428",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3756,7 +3222,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:3.0.9-1",
+						"version": "1:3.1.2-2.1build1",
 						"licenses": [
 							{
 								"value": "GPL-1"
@@ -3772,8 +3238,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libaudit1",
-						"id": "deb@@libaudit1@1:3.0.9-1",
-						"customUniqueKeyHash": "C0B0FDFC92D7933D32897795D0D5C77B",
+						"id": "deb@@libaudit1@1:3.1.2-2.1build1",
+						"customUniqueKeyHash": "AD40BF24410844B698FBD308F84F1F09",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3783,7 +3249,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:3.0.9-1",
+						"version": "1:3.1.2-2.1build1",
 						"licenses": [
 							{
 								"value": "GPL-1"
@@ -3799,8 +3265,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libaudit-common",
-						"id": "deb@@libaudit-common@1:3.0.9-1",
-						"customUniqueKeyHash": "2653878EBE6812758C2233B4251162BF",
+						"id": "deb@@libaudit-common@1:3.1.2-2.1build1",
+						"customUniqueKeyHash": "C510389ABD4CEB42D09EE64C78F6F091",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3810,7 +3276,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:2.5.1-4",
+						"version": "1:2.5.2-1build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3829,8 +3295,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libattr1",
-						"id": "deb@@libattr1@1:2.5.1-4",
-						"customUniqueKeyHash": "E98799BC2A177716BCC26AD1A4C771B0",
+						"id": "deb@@libattr1@1:2.5.2-1build1",
+						"customUniqueKeyHash": "9D89F31470C0A8D6BF168F08C0739BE3",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3840,7 +3306,55 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.6.1",
+						"version": "2.5.6-1build1",
+						"licenses": [
+							{
+								"value": "GAP"
+							},
+							{
+								"value": "GAP~FSF"
+							},
+							{
+								"value": "GPL-2"
+							},
+							{
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-3"
+							},
+							{
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							},
+							{
+								"value": "LGPL-3"
+							},
+							{
+								"value": "LGPL-3+"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libassuan0",
+						"id": "deb@@libassuan0@2.5.6-1build1",
+						"customUniqueKeyHash": "6273BB898F80117C3C5C1CA5DF03B62C",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "deb",
+							"path": ""
+						},
+						"version": "2.7.14build2",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -3858,9 +3372,9 @@
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libapt-pkg6.0",
-						"id": "deb@@libapt-pkg6.0@2.6.1",
-						"customUniqueKeyHash": "DE69F6A0331C02FC978F2B2B8D2CCB34",
+						"name": "libapt-pkg6.0t64",
+						"id": "deb@@libapt-pkg6.0t64@2.7.14build2",
+						"customUniqueKeyHash": "3B2EF31BFD18176870A0FF1A86BDD602",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3870,7 +3384,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.3.1-3",
+						"version": "2.3.2-1build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3889,8 +3403,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libacl1",
-						"id": "deb@@libacl1@2.3.1-3",
-						"customUniqueKeyHash": "AC7456CD457C42CE9C7209C52025559F",
+						"id": "deb@@libacl1@2.3.2-1build1",
+						"customUniqueKeyHash": "53A340DF6CAD7BDF4C4040708DB78742",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3900,7 +3414,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.65.2",
+						"version": "1.66ubuntu1",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -3916,8 +3430,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "init-system-helpers",
-						"id": "deb@@init-system-helpers@1.65.2",
-						"customUniqueKeyHash": "F0D013DA8E53EB5D81AE09185F61824D",
+						"id": "deb@@init-system-helpers@1.66ubuntu1",
+						"customUniqueKeyHash": "2374AB9B4E4A9FA75409D092B382A097",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3927,7 +3441,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.23+nmu1",
+						"version": "3.23+nmu2ubuntu2",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -3937,8 +3451,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "hostname",
-						"id": "deb@@hostname@3.23+nmu1",
-						"customUniqueKeyHash": "1C68F1634D436DD7518F682A6191116C",
+						"id": "deb@@hostname@3.23+nmu2ubuntu2",
+						"customUniqueKeyHash": "A37883C0BE87BA1C9F6AFB98024F7CD1",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3948,7 +3462,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.12-1",
+						"version": "1.12-1ubuntu3",
 						"licenses": [
 							{
 								"value": "FSF-manpages"
@@ -3970,8 +3484,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "gzip",
-						"id": "deb@@gzip@1.12-1",
-						"customUniqueKeyHash": "FF761EF0EF0DCBECD271758FBBA02D90",
+						"id": "deb@@gzip@1.12-1ubuntu3",
+						"customUniqueKeyHash": "BB1CE2A1A421C5196B9876B62EBD97EB",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -3981,7 +3495,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.8-5",
+						"version": "3.11-4build1",
 						"licenses": [
 							{
 								"value": "GPL-3"
@@ -3994,8 +3508,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "grep",
-						"id": "deb@@grep@3.8-5",
-						"customUniqueKeyHash": "7F903FAD189D02E60250D03A0B3D13F7",
+						"id": "deb@@grep@3.11-4build1",
+						"customUniqueKeyHash": "09946B33C219696EEEFCFCF1F045243A",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4005,51 +3519,30 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.2.40-1.1",
+						"version": "14-20240412-0ubuntu1",
 						"licenses": [
 							{
-								"value": "BSD-3-clause"
+								"value": "Artistic"
 							},
 							{
-								"value": "CC0-1.0"
+								"value": "GFDL-1.2"
 							},
 							{
-								"value": "Expat"
+								"value": "GPL"
 							},
 							{
 								"value": "GPL-3"
 							},
 							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2.1"
-							},
-							{
-								"value": "LGPL-2.1+"
-							},
-							{
-								"value": "LGPL-3"
-							},
-							{
-								"value": "LGPL-3+"
-							},
-							{
-								"value": "RFC-Reference"
-							},
-							{
-								"value": "TinySCHEME"
-							},
-							{
-								"value": "permissive"
+								"value": "LGPL"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "gpgv",
-						"id": "deb@@gpgv@2.2.40-1.1",
-						"customUniqueKeyHash": "853C41AA4A684234EFB724167B2627A6",
+						"name": "gcc-14-base",
+						"id": "deb@@gcc-14-base@14-20240412-0ubuntu1",
+						"customUniqueKeyHash": "8642693EBBD56D1D7A7696B92C41F380",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4059,7 +3552,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "4.9.0-4",
+						"version": "4.9.0-5build1",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -4123,8 +3616,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "findutils",
-						"id": "deb@@findutils@4.9.0-4",
-						"customUniqueKeyHash": "3CD3500CEF23763D68A11FC94E9CB304",
+						"id": "deb@@findutils@4.9.0-5build1",
+						"customUniqueKeyHash": "E5EE61C1D33E934CD47D0A242DB46599",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4134,7 +3627,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.47.0-2",
+						"version": "1.47.0-2.4~exp1ubuntu4",
 						"licenses": [
 							{
 								"value": "Apache-2"
@@ -4171,8 +3664,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "e2fsprogs",
-						"id": "deb@@e2fsprogs@1.47.0-2",
-						"customUniqueKeyHash": "ED28BC86DF3CD39063547311700965C0",
+						"id": "deb@@e2fsprogs@1.47.0-2.4~exp1ubuntu4",
+						"customUniqueKeyHash": "9C5FB27BAE59C411C01DA7FD02676987",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4182,11 +3675,8 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1.21.22",
+						"version": "1.22.6ubuntu6",
 						"licenses": [
-							{
-								"value": "BSD-2-clause"
-							},
 							{
 								"value": "GPL-2"
 							},
@@ -4201,8 +3691,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "dpkg",
-						"id": "deb@@dpkg@1.21.22",
-						"customUniqueKeyHash": "FC02D00D85F1B0F182CF9F11FA2E8D37",
+						"id": "deb@@dpkg@1.22.6ubuntu6",
+						"customUniqueKeyHash": "D9B6DAB2163C2D9FFDA96951C208DC61",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4212,7 +3702,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:3.8-4",
+						"version": "1:3.10-1build1",
 						"licenses": [
 							{
 								"value": "FSFAP"
@@ -4267,8 +3757,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "diffutils",
-						"id": "deb@@diffutils@1:3.8-4",
-						"customUniqueKeyHash": "0EBDE323CC01E3CBFF7DD682815CFB2C",
+						"id": "deb@@diffutils@1:3.10-1build1",
+						"customUniqueKeyHash": "4E3A42AC9423C833D38286A31CD6AE5B",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4278,7 +3768,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "5.7-0.5~deb12u1",
+						"version": "5.17build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -4297,8 +3787,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "debianutils",
-						"id": "deb@@debianutils@5.7-0.5~deb12u1",
-						"customUniqueKeyHash": "098ABC83E0E9D5219967B47CC8B79765",
+						"id": "deb@@debianutils@5.17build1",
+						"customUniqueKeyHash": "FDEC57B4082753382E91F556431FBA13",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4308,28 +3798,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2023.3+deb12u1",
-						"licenses": [
-							{
-								"value": "GPL"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "debian-archive-keyring",
-						"id": "deb@@debian-archive-keyring@2023.3+deb12u1",
-						"customUniqueKeyHash": "9E0A557B31EDBF0506FD3A456EA5B881",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.82",
+						"version": "1.5.86ubuntu1",
 						"licenses": [
 							{
 								"value": "BSD-2-clause"
@@ -4339,8 +3808,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "debconf",
-						"id": "deb@@debconf@1.5.82",
-						"customUniqueKeyHash": "B50AF391FACF659101AAC8C58492C0F0",
+						"id": "deb@@debconf@1.5.86ubuntu1",
+						"customUniqueKeyHash": "F4DD03ECA047934B5404748ED57C91B6",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4350,7 +3819,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "0.5.12-2",
+						"version": "0.5.12-6ubuntu5",
 						"licenses": [
 							{
 								"value": "BSD-3-Clause"
@@ -4372,8 +3841,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "dash",
-						"id": "deb@@dash@0.5.12-2",
-						"customUniqueKeyHash": "CEB629C2836554536CFFF1C7137601DA",
+						"id": "deb@@dash@0.5.12-6ubuntu5",
+						"customUniqueKeyHash": "92BE9B5537186B2493992CD0408EA225",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4383,7 +3852,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:2.38.1-5+deb12u1",
+						"version": "1:2.39.3-9ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -4438,8 +3907,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "bsdutils",
-						"id": "deb@@bsdutils@1:2.38.1-5+deb12u1",
-						"customUniqueKeyHash": "0BF68D4D59DFE9AD3F8134F7B3BFAD61",
+						"id": "deb@@bsdutils@1:2.39.3-9ubuntu6",
+						"customUniqueKeyHash": "834D60C340D3F6783DEF1B7D16162E73",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4449,7 +3918,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "5.2.15-2+b7",
+						"version": "5.2.21-2ubuntu4",
 						"licenses": [
 							{
 								"value": "BSD-4-clause-UC"
@@ -4486,8 +3955,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "bash",
-						"id": "deb@@bash@5.2.15-2+b7",
-						"customUniqueKeyHash": "7EF2EDFCD235EDB96CC113616154FB6C",
+						"id": "deb@@bash@5.2.21-2ubuntu4",
+						"customUniqueKeyHash": "A7896489C65451A9579BEB8F44EABF5C",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4497,7 +3966,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.6.1",
+						"version": "3.6.3build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -4510,8 +3979,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "base-passwd",
-						"id": "deb@@base-passwd@3.6.1",
-						"customUniqueKeyHash": "5E8A4AF262A835853ACB02CACC6C19B4",
+						"id": "deb@@base-passwd@3.6.3build1",
+						"customUniqueKeyHash": "FDB916B2A0BF5E715B042831CD37361F",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4521,7 +3990,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "12.4+deb12u7",
+						"version": "13ubuntu10",
 						"licenses": [
 							{
 								"value": "GPL"
@@ -4531,8 +4000,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "base-files",
-						"id": "deb@@base-files@12.4+deb12u7",
-						"customUniqueKeyHash": "C919D54EA688381D23533B6430C91EA1",
+						"id": "deb@@base-files@13ubuntu10",
+						"customUniqueKeyHash": "2F7ADD0394D4E904EB1A8504ACC6BC0E",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4542,7 +4011,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "2.6.1",
+						"version": "2.7.14build2",
 						"licenses": [
 							{
 								"value": "BSD-3-clause"
@@ -4561,8 +4030,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "apt",
-						"id": "deb@@apt@2.6.1",
-						"customUniqueKeyHash": "613BFA7BE56F19D9122948817F287DDF",
+						"id": "deb@@apt@2.7.14build2",
+						"customUniqueKeyHash": "FC4736238DCFD10A6735F3E3F848A24C",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4572,135 +4041,27 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "3.134",
+						"version": "3.0.13-0ubuntu3.2",
 						"licenses": [
 							{
-								"value": "GPL-2"
+								"value": "Apache-2.0"
 							},
-							{
-								"value": "GPL-2+"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "adduser",
-						"id": "deb@@adduser@3.134",
-						"customUniqueKeyHash": "7F4C4624891EEF381D2A68F3BFD558FA",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1:1.2.13.dfsg-1",
-						"licenses": [
-							{
-								"value": "Zlib"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "zlib1g",
-						"id": "deb@@zlib1g@1:1.2.13.dfsg-1",
-						"customUniqueKeyHash": "43A4AFA6E77092108EB3C174EF304010",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "5.36.0-7+deb12u1",
-						"licenses": [
 							{
 								"value": "Artistic"
-							},
-							{
-								"value": "Artistic-2"
-							},
-							{
-								"value": "Artistic-dist"
-							},
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-3-clause-GENERIC"
-							},
-							{
-								"value": "BSD-3-clause-with-weird-numbering"
-							},
-							{
-								"value": "BSD-4-clause-POWERDOG"
-							},
-							{
-								"value": "BZIP"
-							},
-							{
-								"value": "DONT-CHANGE-THE-GPL"
-							},
-							{
-								"value": "Expat"
 							},
 							{
 								"value": "GPL-1"
 							},
 							{
 								"value": "GPL-1+"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3+-WITH-BISON-EXCEPTION"
-							},
-							{
-								"value": "HSIEH-BSD"
-							},
-							{
-								"value": "HSIEH-DERIVATIVE"
-							},
-							{
-								"value": "LGPL-2.1"
-							},
-							{
-								"value": "REGCOMP"
-							},
-							{
-								"value": "REGCOMP,"
-							},
-							{
-								"value": "RRA-KEEP-THIS-NOTICE"
-							},
-							{
-								"value": "SDBM-PUBLIC-DOMAIN"
-							},
-							{
-								"value": "TEXT-TABS"
-							},
-							{
-								"value": "Unicode"
-							},
-							{
-								"value": "ZLIB"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "perl-base",
-						"id": "deb@@perl-base@5.36.0-7+deb12u1",
-						"customUniqueKeyHash": "86C6862A84E44AD882B28CD0DC0647A5",
+						"name": "libssl3t64",
+						"id": "deb@@libssl3t64@3.0.13-0ubuntu3.2",
+						"customUniqueKeyHash": "50682BF320A48F01D90FB13D20D404CA",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -4710,394 +4071,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "1:4.13+dfsg1-1+b1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "GPL-1"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "passwd",
-						"id": "deb@@passwd@1:4.13+dfsg1-1+b1",
-						"customUniqueKeyHash": "7FC26882F1C10AD03FDC68F8C9EF139E",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "ncurses-bin",
-						"id": "deb@@ncurses-bin@6.4-4",
-						"customUniqueKeyHash": "984631D6E9FF22E2CDA26B6CDB486BA3",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "ncurses-base",
-						"id": "deb@@ncurses-base@6.4-4",
-						"customUniqueKeyHash": "D2C3A2BBA52896665B4E5271D91C08C2",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1:4.13+dfsg1-1+b1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "GPL-1"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "login",
-						"id": "deb@@login@1:4.13+dfsg1-1+b1",
-						"customUniqueKeyHash": "6636BBE529BB0BE913DD9639CF4C81B8",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "6.4-4",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "MIT/X11"
-							},
-							{
-								"value": "X11"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libtinfo6",
-						"id": "deb@@libtinfo6@6.4-4",
-						"customUniqueKeyHash": "2C5CED21496AC390B2EDB3A7C903AA19",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "12.2.0-14",
-						"licenses": [
-							{
-								"value": "Artistic"
-							},
-							{
-								"value": "GFDL-1.2"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "LGPL"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libstdc++6",
-						"id": "deb@@libstdc++6@12.2.0-14",
-						"customUniqueKeyHash": "F48C4562B85F9D1075750464759492D1",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libpam0g",
-						"id": "deb@@libpam0g@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "110BA7DC7ACCB6379DCB621DBF113920",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libpam-runtime",
-						"id": "deb@@libpam-runtime@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "D06BC895DCB76396A760C1992C3FCA9C",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libpam-modules",
-						"id": "deb@@libpam-modules@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "3FDD3A4914730462BF365949E96560E0",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.5.2-6+deb12u1",
-						"licenses": [
-							{
-								"value": "BSD-3-clause"
-							},
-							{
-								"value": "BSD-tcp_wrappers"
-							},
-							{
-								"value": "Beerware"
-							},
-							{
-								"value": "GPL"
-							},
-							{
-								"value": "GPL-2"
-							},
-							{
-								"value": "GPL-2+"
-							},
-							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "GPL-3+"
-							},
-							{
-								"value": "LGPL-2"
-							},
-							{
-								"value": "LGPL-2+"
-							},
-							{
-								"value": "public-domain"
-							}
-						],
-						"is-os-package": true,
-						"isFixable": false,
-						"type": "SBOMPackage",
-						"name": "libpam-modules-bin",
-						"id": "deb@@libpam-modules-bin@1.5.2-6+deb12u1",
-						"customUniqueKeyHash": "8AA43C6387552217772A81E5E4732403",
-						"category": "SBOMPackage",
-						"severity": "",
-						"remediation": ""
-					},
-					{
-						"package-manager": {
-							"name": "deb",
-							"path": ""
-						},
-						"version": "1.10.1-3",
+						"version": "1.10.3-2build1",
 						"licenses": [
 							{
 								"value": "GPL-2"
@@ -5110,8 +4084,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "libgcrypt20",
-						"id": "deb@@libgcrypt20@1.10.1-3",
-						"customUniqueKeyHash": "BB5785BD1596EDAEA7E2996E1E5C96F3",
+						"id": "deb@@libgcrypt20@1.10.3-2build1",
+						"customUniqueKeyHash": "CA9418C80CC2B04963273A62AE8FF73F",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -5121,33 +4095,30 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "12.2.0-14",
+						"version": "10.42-4ubuntu2",
 						"licenses": [
 							{
-								"value": "Artistic"
+								"value": "BSD-2-clause"
 							},
 							{
-								"value": "GFDL-1.2"
+								"value": "BSD-3-clause"
 							},
 							{
-								"value": "GPL"
+								"value": "BSD-3-clause-Cambridge"
 							},
 							{
-								"value": "GPL-2"
+								"value": "X11"
 							},
 							{
-								"value": "GPL-3"
-							},
-							{
-								"value": "LGPL"
+								"value": "public-domain"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "libgcc-s1",
-						"id": "deb@@libgcc-s1@12.2.0-14",
-						"customUniqueKeyHash": "D6FE1E0A647ADC60AD1BFC564242552D",
+						"name": "libpcre2-8-0",
+						"id": "deb@@libpcre2-8-0@10.42-4ubuntu2",
+						"customUniqueKeyHash": "B89D5EB1AF81D0E9992E0B1EE43FF3A5",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -5157,33 +4128,57 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "12.2.0-14",
+						"version": "2.4.4-2ubuntu17",
 						"licenses": [
 							{
-								"value": "Artistic"
+								"value": "BSD-3-clause"
 							},
 							{
-								"value": "GFDL-1.2"
+								"value": "CC0-1.0"
 							},
 							{
-								"value": "GPL"
+								"value": "Expat"
 							},
 							{
-								"value": "GPL-2"
+								"value": "GPL-2+"
+							},
+							{
+								"value": "GPL-2.0"
 							},
 							{
 								"value": "GPL-3"
 							},
 							{
-								"value": "LGPL"
+								"value": "GPL-3+"
+							},
+							{
+								"value": "LGPL-2.1"
+							},
+							{
+								"value": "LGPL-2.1+"
+							},
+							{
+								"value": "LGPL-3"
+							},
+							{
+								"value": "LGPL-3+"
+							},
+							{
+								"value": "RFC-Reference"
+							},
+							{
+								"value": "TinySCHEME"
+							},
+							{
+								"value": "permissive"
 							}
 						],
 						"is-os-package": true,
 						"isFixable": false,
 						"type": "SBOMPackage",
-						"name": "gcc-12-base",
-						"id": "deb@@gcc-12-base@12.2.0-14",
-						"customUniqueKeyHash": "B6EE8AFC6B6B8583EC283F65BE9FC0D1",
+						"name": "gpgv",
+						"id": "deb@@gpgv@2.4.4-2ubuntu17",
+						"customUniqueKeyHash": "4F376F209EDBFE41D7652CB828A863F6",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -5193,7 +4188,7 @@
 							"name": "deb",
 							"path": ""
 						},
-						"version": "9.1-1",
+						"version": "9.4-3ubuntu6",
 						"licenses": [
 							{
 								"value": "BSD-4-clause-UC"
@@ -5221,8 +4216,8 @@
 						"isFixable": false,
 						"type": "SBOMPackage",
 						"name": "coreutils",
-						"id": "deb@@coreutils@9.1-1",
-						"customUniqueKeyHash": "0729A467C280E2579347004C0F0DA929",
+						"id": "deb@@coreutils@9.4-3ubuntu6",
+						"customUniqueKeyHash": "4762BA829E768560F538989226BFAABA",
 						"category": "SBOMPackage",
 						"severity": "",
 						"remediation": ""
@@ -5230,19 +4225,19 @@
 				],
 				"imageScan": [
 					{
-						"risk-score": 8.7,
+						"risk-score": 3.6,
 						"totals": {
-							"all": 21,
-							"allFixable": 0,
-							"critical": 1,
+							"all": 6,
+							"allFixable": 1,
+							"critical": 0,
 							"criticalFixable": 0,
-							"high": 1,
+							"high": 0,
 							"highFixable": 0,
-							"medium": 13,
-							"mediumFixable": 0,
+							"medium": 3,
+							"mediumFixable": 1,
 							"low": 3,
 							"lowFixable": 0,
-							"unknown": 3,
+							"unknown": 0,
 							"unknownFixable": 0,
 							"insecure-code": 0,
 							"insecure-content": 0,
@@ -5250,29 +4245,63 @@
 							"malicious-ip": 0,
 							"malicious-file": 0,
 							"restricted-license": 0,
-							"cve": 21
+							"cve": 6
 						},
+						"remediation-summary": [
+							{
+								"file-path": "",
+								"categories": [
+									{
+										"category": "CVE",
+										"remediations": [
+											{
+												"finding": "libssl3t64@3.0.13-0ubuntu3.2",
+												"severity": "Medium",
+												"action": "Upgrade to 3.0.13-0ubuntu3.4 (fixes CVE-2024-6119 (Medium)) (fix 1/2 findings)"
+											}
+										]
+									}
+								]
+							}
+						],
 						"type": "ImageScan",
 						"name": "",
-						"id": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad-68a0dc52-3497-4cb2-b385-29ac682ad5cc",
-						"customUniqueKeyHash": "BA5A2175AA39C84E4B127A0454985164",
+						"id": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a-5adadf7d-a1fd-4ade-af49-894e7d98625e",
+						"customUniqueKeyHash": "34F94D4C45CD725232890E5A7102F393",
 						"category": "ImageScan",
 						"severity": "",
-						"description": "Vulnerabilities: 21 CVEs, 0 malicious URLs, 0 malicious IPs, 0 malicious files, 0 insecure content. \nBy severity: 1 critical, 1 high, 13 medium, 3 low, 3 unknown.",
-						"remediation": "Upgrade 0 packages with CVEs (fix 0/21 findings)\n\nCVEs Without Remediation:\nCVE-2023-45853 (Critical), CVE-2023-31484 (High), CVE-2023-4641 (Medium), CVE-2023-29383 (Low), CVE-2023-50495 (Medium), CVE-2023-45918 (Unknown), CVE-2023-4039 (Medium), CVE-2024-22365 (Medium), CVE-2024-2236 (Medium), CVE-2016-2781 (Low)\n\n"
+						"description": "Vulnerabilities: 6 CVEs, 0 malicious URLs, 0 malicious IPs, 0 malicious files, 0 insecure content. \nBy severity: 0 critical, 0 high, 3 medium, 3 low, 0 unknown.",
+						"remediation": "Upgrade 1 packages with CVEs (fix 1/6 findings)\n\nCVEs:\nlibssl3t64@3.0.13-0ubuntu3.2 (deb): Upgrade to 3.0.13-0ubuntu3.4 (fixes CVE-2024-6119 (Medium))\n\n\nCVEs Without Remediation:\nCVE-2024-41996 (Medium), CVE-2024-2236 (Medium), CVE-2022-41409 (Low), CVE-2022-3219 (Low), CVE-2016-2781 (Low)\n\n"
 					}
 				],
 				"scanSummary": [
 					{
-						"risk-score": 8.7,
+						"risk-score": 3.6,
+						"remediation-summary": [
+							{
+								"file-path": "",
+								"categories": [
+									{
+										"category": "CVE",
+										"remediations": [
+											{
+												"finding": "libssl3t64@3.0.13-0ubuntu3.2",
+												"severity": "Medium",
+												"action": "Upgrade to 3.0.13-0ubuntu3.4 (fixes CVE-2024-6119 (Medium)) (fix 1/2 findings)"
+											}
+										]
+									}
+								]
+							}
+						],
 						"type": "ScanSummary",
 						"name": "",
-						"id": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad-68a0dc52-3497-4cb2-b385-29ac682ad5cc",
-						"customUniqueKeyHash": "3DFDE9F90709B4ADAF8B60B90C3379B0",
+						"id": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a-5adadf7d-a1fd-4ade-af49-894e7d98625e",
+						"customUniqueKeyHash": "8D6B3AA086AC2885DE506E30BA4B082B",
 						"category": "ScanSummary",
 						"severity": "",
-						"description": "Vulnerabilities: 21 CVEs, 0 malicious URLs, 0 malicious IPs, 0 malicious files, 0 insecure content. \nBy severity: 1 critical, 1 high, 13 medium, 3 low, 3 unknown.",
-						"remediation": "Upgrade 0 packages with CVEs (fix 0/21 findings)\n\nCVEs Without Remediation:\nCVE-2023-45853 (Critical), CVE-2023-31484 (High), CVE-2023-4641 (Medium), CVE-2023-29383 (Low), CVE-2023-50495 (Medium), CVE-2023-45918 (Unknown), CVE-2023-4039 (Medium), CVE-2024-22365 (Medium), CVE-2024-2236 (Medium), CVE-2016-2781 (Low)\n\n"
+						"description": "Vulnerabilities: 6 CVEs, 0 malicious URLs, 0 malicious IPs, 0 malicious files, 0 insecure content. \nBy severity: 0 critical, 0 high, 3 medium, 3 low, 0 unknown.",
+						"remediation": "Upgrade 1 packages with CVEs (fix 1/6 findings)\n\nCVEs:\nlibssl3t64@3.0.13-0ubuntu3.2 (deb): Upgrade to 3.0.13-0ubuntu3.4 (fixes CVE-2024-6119 (Medium))\n\n\nCVEs Without Remediation:\nCVE-2024-41996 (Medium), CVE-2024-2236 (Medium), CVE-2022-41409 (Low), CVE-2022-3219 (Low), CVE-2016-2781 (Low)\n\n"
 					}
 				],
 				"finding": []
@@ -5283,39 +4312,39 @@
 				"description": "Workload vulnerabilities"
 			},
 			"stats": {
-				"passed": 10,
-				"failed": 2,
+				"passed": 12,
+				"failed": 0,
 				"error": 0,
-				"failedTests": 2,
+				"failedTests": 0,
 				"excludedTests": 0,
-				"logicallyTested": 32,
-				"failedEntities": 2,
+				"logicallyTested": 10,
+				"failedEntities": 0,
 				"failedRulesBySeverity": {
 					"informational": 0,
 					"low": 0,
 					"medium": 0,
-					"high": 1,
-					"critical": 1
+					"high": 0,
+					"critical": 0
 				},
 				"passedRulesBySeverity": {
 					"informational": 0,
 					"low": 3,
 					"medium": 0,
-					"high": 5,
-					"critical": 2
+					"high": 6,
+					"critical": 3
 				}
 			},
 			"scannedAsset": {
-				"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad",
+				"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a",
 				"platform": "ShiftLeft",
 				"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 				"entityType": "ShiftLeftImage",
-				"externalId": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad",
-				"entityName": "docker.io/library/debian:latest",
-				"operatingSystem": "debian:12",
+				"externalId": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a",
+				"entityName": "docker.io/library/ubuntu:noble",
+				"operatingSystem": "ubuntu:24.04",
 				"additionalFields": {
 					"imageDigest": "",
-					"imageId": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad"
+					"imageId": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a"
 				}
 			},
 			"scanInfo": {
@@ -5323,21 +4352,21 @@
 			}
 		}
 	],
-	"requestId": "a03cbed2-9abd-4f52-aea6-482d292a7a8a",
+	"requestId": "010a8d66-70c7-480e-9f44-ba91d5df6587",
 	"scanInfo": {
 		"scanProducer": "ImageAssuranceV2"
 	},
 	"scannedAsset": {
-		"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad",
+		"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a",
 		"platform": "ShiftLeft",
 		"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 		"entityType": "ShiftLeftImage",
-		"externalId": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad",
-		"entityName": "docker.io/library/debian:latest",
-		"operatingSystem": "debian:12",
+		"externalId": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a",
+		"entityName": "docker.io/library/ubuntu:noble",
+		"operatingSystem": "ubuntu:24.04",
 		"additionalFields": {
 			"imageDigest": "",
-			"imageId": "sha256:4fd3f4b75df372cc4fd60fd5c133c666cf4738ca0973523513f564076395f8ad"
+			"imageId": "sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a"
 		}
 	}
 }

@@ -120,6 +120,7 @@ function scanIfNeeded() {
         imageLink $IMAGEID
     else
         echo "Scan results not found"
+        echo "$RES"
         scan_image $IMAGE
     fi
 }
