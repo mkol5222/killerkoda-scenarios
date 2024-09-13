@@ -4,8 +4,8 @@
 		{
 			"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 			"environmentName": "scans",
-			"createdTime": "2024-09-04T11:56:36.2945284Z",
-			"assessmentId": "044a8260-b84f-4e35-8ad7-ffab74a29f31",
+			"createdTime": "2024-09-13T09:26:42.4404436Z",
+			"assessmentId": "bf47f81d-eec5-417b-acf6-ee8c01de9cb1",
 			"assessmentPassed": true,
 			"hasErrors": false,
 			"tests": [
@@ -278,7 +278,598 @@
 				"insecureContent": [],
 				"malware": [],
 				"package": [],
-				"sbomPackage": [],
+				"sbomPackage": [
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "go1.22.7",
+						"licenses": [
+							{
+								"value": "BSD-3-Clause"
+							}
+						],
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "stdlib",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@stdlib@go1.22.7",
+						"customUniqueKeyHash": "C0D4F7E5C978C3B66B6ECC478D4472B0",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.4.2",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "shiftleft-cli",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@shiftleft-cli@v1.4.2",
+						"customUniqueKeyHash": "0C6ADA2C2AE7E0AC423CAC68516E82AC",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.0.0-20220412211240-33da011f77ad",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "golang.org/x/sys",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@golang.org/x/sys@v0.0.0-20220412211240-33da011f77ad",
+						"customUniqueKeyHash": "2B73D65F7AFBA3078A4C0DC84849F9B4",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.5.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "go.mongodb.org/mongo-driver",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@go.mongodb.org/mongo-driver@v1.5.1",
+						"customUniqueKeyHash": "319E406CF1F9F5AC493ED31403C3EB3A",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.0.5",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/spf13/pflag",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/spf13/pflag@v1.0.5",
+						"customUniqueKeyHash": "01588EAF861251C7476E86BCAD8A9F24",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.8.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/sirupsen/logrus",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/sirupsen/logrus@v1.8.1",
+						"customUniqueKeyHash": "F54348DB413F8199F4E4464C8238CDE9",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.2.0",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/rivo/uniseg",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/rivo/uniseg@v0.2.0",
+						"customUniqueKeyHash": "2C52AB0E493BE1225432198C2C2F958B",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.3.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/Rican7/retry",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/Rican7/retry@v0.3.1",
+						"customUniqueKeyHash": "66E5AED069D11B448A4A851A0F394A32",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.3.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/oklog/ulid",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/oklog/ulid@v1.3.1",
+						"customUniqueKeyHash": "F93B5B2DC0236C6C244A132F19043619",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.4.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/mitchellh/mapstructure",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/mitchellh/mapstructure@v1.4.1",
+						"customUniqueKeyHash": "1EFA4D027874840D86F73C60696F0DB7",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.0.13",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/mattn/go-runewidth",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/mattn/go-runewidth@v0.0.13",
+						"customUniqueKeyHash": "12F0C969AE6851F32DCEE9C152BDE230",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v4.3.0+incompatible",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/jedib0t/go-pretty",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/jedib0t/go-pretty@v4.3.0+incompatible",
+						"customUniqueKeyHash": "3059344156B6B4B9105BA5E4AAFA36BF",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.2.0",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/google/uuid",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/google/uuid@v1.2.0",
+						"customUniqueKeyHash": "4086C755F0C54A52B5D323514C03B8A7",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.8.0",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/go-stack/stack",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/go-stack/stack@v1.8.0",
+						"customUniqueKeyHash": "5D4BE6CE80188F5447A7043482271337",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.20.1",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/go-openapi/strfmt",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/go-openapi/strfmt@v0.20.1",
+						"customUniqueKeyHash": "FF098025B364FFAD6C5C76CE32B2CAFB",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.20.0",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/go-openapi/errors",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/go-openapi/errors@v0.20.0",
+						"customUniqueKeyHash": "66D70EE7837EEE0FD453379D73EA6962",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v1.0.0",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/dustin/go-humanize",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/dustin/go-humanize@v1.0.0",
+						"customUniqueKeyHash": "21C7D114F8EFE06932DAC17C0C7935ED",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "go-module",
+							"path": "/usr/local/shiftleft/bin/shiftleft"
+						},
+						"version": "v0.0.0-20210307081110-f21760c49a8d",
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "github.com/asaskevich/govalidator",
+						"id": "go-module@/usr/local/shiftleft/bin/shiftleft@github.com/asaskevich/govalidator@v0.0.0-20210307081110-f21760c49a8d",
+						"customUniqueKeyHash": "1A4F2D1F6CFE230768956B7109321B79",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.2.13-r1",
+						"licenses": [
+							{
+								"value": "Zlib"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "zlib",
+						"id": "apk@@zlib@1.2.13-r1",
+						"customUniqueKeyHash": "DE4EEC884193B3C296EE11886E53E0E6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.36.1-r7",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "ssl_client",
+						"id": "apk@@ssl_client@1.36.1-r7",
+						"customUniqueKeyHash": "D103C87A1897A8C2F41BDB220751506F",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.3.7-r1",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "scanelf",
+						"id": "apk@@scanelf@1.3.7-r1",
+						"customUniqueKeyHash": "0721A73BE6D2E3CA2314B6AB68DC84A3",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.2.4-r2",
+						"licenses": [
+							{
+								"value": "MIT"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "musl",
+						"id": "apk@@musl@1.2.4-r2",
+						"customUniqueKeyHash": "2E39323BDC897533FAAC736814BC4324",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.2.4-r2",
+						"licenses": [
+							{
+								"value": "MIT AND BSD-2-Clause AND GPL-2.0-or-later"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "musl-utils",
+						"id": "apk@@musl-utils@1.2.4-r2",
+						"customUniqueKeyHash": "207316FD0133079CC634AB722F09CA5E",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "3.1.7-r0",
+						"licenses": [
+							{
+								"value": "Apache-2.0"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libssl3",
+						"id": "apk@@libssl3@3.1.7-r0",
+						"customUniqueKeyHash": "C57AA0B846F29AF6217FDC79ACFCE7A6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "3.1.7-r0",
+						"licenses": [
+							{
+								"value": "Apache-2.0"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libcrypto3",
+						"id": "apk@@libcrypto3@3.1.7-r0",
+						"customUniqueKeyHash": "37F6D46C4397567DF71F2B2128BB6514",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "0.7.2-r5",
+						"licenses": [
+							{
+								"value": "BSD-2-Clause AND BSD-3-Clause"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "libc-utils",
+						"id": "apk@@libc-utils@0.7.2-r5",
+						"customUniqueKeyHash": "3F9256BC4E902A56BF058603BE99F5B6",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "20240226-r0",
+						"licenses": [
+							{
+								"value": "MPL-2.0 AND MIT"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "ca-certificates-bundle",
+						"id": "apk@@ca-certificates-bundle@20240226-r0",
+						"customUniqueKeyHash": "FEF569F1BE405EF88DC9C0200E48E9DC",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.36.1-r7",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "busybox",
+						"id": "apk@@busybox@1.36.1-r7",
+						"customUniqueKeyHash": "F805C446C59D846187FBE28A12469536",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "1.36.1-r7",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "busybox-binsh",
+						"id": "apk@@busybox-binsh@1.36.1-r7",
+						"customUniqueKeyHash": "41D1F16AE3B927985B55A776A61CE73F",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "2.14.4-r0",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "apk-tools",
+						"id": "apk@@apk-tools@2.14.4-r0",
+						"customUniqueKeyHash": "511A9D2DF78061AB1AFBE2F209985472",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "2.4-r1",
+						"licenses": [
+							{
+								"value": "MIT"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "alpine-keys",
+						"id": "apk@@alpine-keys@2.4-r1",
+						"customUniqueKeyHash": "F6D45A1541AEB96F73F211DB9AAEACC5",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "3.4.3-r1",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "alpine-baselayout",
+						"id": "apk@@alpine-baselayout@3.4.3-r1",
+						"customUniqueKeyHash": "96FE412E180D5ADC3A5CE82AFADDD689",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					},
+					{
+						"package-manager": {
+							"name": "apk",
+							"path": ""
+						},
+						"version": "3.4.3-r1",
+						"licenses": [
+							{
+								"value": "GPL-2.0-only"
+							}
+						],
+						"is-os-package": true,
+						"isFixable": false,
+						"type": "SBOMPackage",
+						"name": "alpine-baselayout-data",
+						"id": "apk@@alpine-baselayout-data@3.4.3-r1",
+						"customUniqueKeyHash": "18DD780A05E0087152D993DE02D0043C",
+						"category": "SBOMPackage",
+						"severity": "",
+						"remediation": ""
+					}
+				],
 				"imageScan": [
 					{
 						"risk-score": 0.0,
@@ -305,7 +896,7 @@
 						},
 						"type": "ImageScan",
 						"name": "",
-						"id": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a-fb15e47f-0336-4d6b-a926-2d2890b8edc8",
+						"id": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332-73afe12a-7500-48db-9c37-b5f1a8ddc950",
 						"customUniqueKeyHash": "7FD57115396A24C5EFF4E199AF5989E3",
 						"category": "ImageScan",
 						"severity": "",
@@ -317,7 +908,7 @@
 						"risk-score": 0.0,
 						"type": "ScanSummary",
 						"name": "",
-						"id": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a-fb15e47f-0336-4d6b-a926-2d2890b8edc8",
+						"id": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332-73afe12a-7500-48db-9c37-b5f1a8ddc950",
 						"customUniqueKeyHash": "8C9AAEC7990CBF11527AC2071F8ED7A3",
 						"category": "ScanSummary",
 						"severity": "",
@@ -355,16 +946,16 @@
 				}
 			},
 			"scannedAsset": {
-				"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+				"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332",
 				"platform": "ShiftLeft",
 				"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 				"entityType": "ShiftLeftImage",
-				"externalId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
-				"entityName": "docker.io/library/hello-world:latest",
-				"operatingSystem": "",
+				"externalId": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332",
+				"entityName": "docker.io/checkpoint/shiftleft:latest_v2",
+				"operatingSystem": "alpine:3.18.4",
 				"additionalFields": {
 					"imageDigest": "",
-					"imageId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a"
+					"imageId": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332"
 				}
 			},
 			"scanInfo": {
@@ -372,21 +963,21 @@
 			}
 		}
 	],
-	"requestId": "8aa0cb87-5d4b-45b1-9df8-c1782c00a9b9",
+	"requestId": "37d2ab31-17de-4111-9a51-3029b6fee54d",
 	"scanInfo": {
 		"scanProducer": "ImageAssuranceV2"
 	},
 	"scannedAsset": {
-		"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
+		"id": "13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332",
 		"platform": "ShiftLeft",
 		"environmentId": "7f1fedb8-0584-4473-91c9-ff3b9047fe81",
 		"entityType": "ShiftLeftImage",
-		"externalId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a",
-		"entityName": "docker.io/library/hello-world:latest",
-		"operatingSystem": "",
+		"externalId": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332",
+		"entityName": "docker.io/checkpoint/shiftleft:latest_v2",
+		"operatingSystem": "alpine:3.18.4",
 		"additionalFields": {
 			"imageDigest": "",
-			"imageId": "sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a"
+			"imageId": "sha256:5e79efea0dcb3dcf4b433c9ddc688749284334d9263fb51e387467fe202db332"
 		}
 	}
 }
