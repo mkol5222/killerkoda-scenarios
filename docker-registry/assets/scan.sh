@@ -52,7 +52,7 @@ function scanMetadata() {
     curl -s -H "Content-Type: application/json" -u $AUTH $APIURL | jq .
 }
 
-scanMetadata ubuntu:latest
+# scanMetadata ubuntu:latest
 
 # /v2/kubernetes/imageAssurance/image/general?id=13|7f1fedb8-0584-4473-91c9-ff3b9047fe81|Image|sha256:edbfe74c41f8a3501ce542e137cf28ea04dd03e6df8c9d66519b6ad761c2598a
 
@@ -74,7 +74,14 @@ function scanResultsInDb() {
 
 # scanResultsInDb ubuntu:latest
 
-
+function imageLink() {
+    IMAGEID=$1
+    SHORT_IMAGEID=$(echo $IMAGEID | cut -c 8-)
+    LINK="https://portal.checkpoint.com/dashboard/cloudguard#/workload/images/generic?cloudAccountId=$SHIFTLEFT_ENV&assetType=ShiftLeftImage&assetId=sha256%3A$SHORT_IMAGEID&tabName=overview&tabOnly=true&platform=shiftleft&drawer=undefined"
+    echo 
+    echo "Infinity Portal link to scan results: $LINK"
+    echo
+}
 
 
 function scan_image() {
@@ -93,32 +100,31 @@ function scan_image() {
 
     scanResults
 
-    SHORT_IMAGEID=$(echo $IMAGEID | cut -c 8-)
-    LINK="https://portal.checkpoint.com/dashboard/cloudguard#/workload/images/generic?cloudAccountId=$SHIFTLEFT_ENV&assetType=ShiftLeftImage&assetId=sha256%3A$SHORT_IMAGEID&tabName=overview&tabOnly=true&platform=shiftleft&drawer=undefined"
-    echo 
-    echo "Infinity Portal link to scan results: $LINK"
-    echo
+    imageLink $IMAGEID
 }
 
-scan_image ubuntu:latest
-scan_image checkpoint/shiftleft:latest_v2
-scan_image hello-world:latest
+# scan_image ubuntu:latest
+# scan_image checkpoint/shiftleft:latest_v2
+# scan_image hello-world:latest
 
-scanResultsInDb hello-world:latest | jq .image.scanDetails.totals
-scanResultsInDb ubuntu:latest | jq .image.scanDetails.totals
+# scanResultsInDb hello-world:latest | jq .image.scanDetails.totals
+# scanResultsInDb ubuntu:latest | jq .image.scanDetails.totals
 
 function scanIfNeeded() {
     IMAGE=$1
     RES=$(scanResultsInDb $IMAGE | jq -r .image.scanDetails.totals)
     if [[ $RES != "null" ]]; then
         echo "Scan results found"
+        echo $RES | jq .
+        IMAGEID=$(curl -s --unix-socket /var/run/docker.sock -X GET "http://localhost/images/$IMAGE/json" | jq -r '.Id')
+        imageLink $IMAGEID
     else
         echo "Scan results not found"
         scan_image $IMAGE
     fi
 }
 
-scanIfNeeded debian:latest
+# scanIfNeeded debian:latest
 
 
 
