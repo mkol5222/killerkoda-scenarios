@@ -87,20 +87,32 @@ function imageLink() {
 function scan_image() {
     IMAGE=$1
     docker pull $IMAGE
+    rm -f /tmp/image.tar
     export_image $IMAGE
-    echo "Scanning image $IMAGE"
-    docker run --rm -v ./res:/res -v /tmp:/data -e CHKP_CLOUDGUARD_ID=$CHKP_CLOUDGUARD_ID -e CHKP_CLOUDGUARD_SECRET=$CHKP_CLOUDGUARD_SECRET -e SHIFTLEFT_REGION=$SHIFTLEFT_REGION -e SHIFTLEFT_ENV=$SHIFTLEFT_ENV checkpoint/shiftleft:latest_v2 shiftleft -D image-scan -j -i /data/image.tar -e $SHIFTLEFT_ENV -o /res/scan.json
-
-    IMAGEID=$(curl -s --unix-socket /var/run/docker.sock -X GET "http://localhost/images/$IMAGE/json" | jq -r '.Id')
-    if [[ $IMAGEID == sha256:* ]]; then
-        echo "IMAGEID is valid"
+    # make sure that /tmp/image.tar exists and is tar file
+    if [[ ! -f /tmp/image.tar ]]; then
+        echo "Error: /tmp/image.tar does not exist"
     else
-        echo "IMAGEID is invalid"
+        # file /tmp/image.tar results includes 'tar archive'
+        if [[ ! $(file /tmp/image.tar)  =~ 'tar archive' ]]; then
+            echo "Error: /tmp/image.tar is not a tar file"
+        else
+            echo "File /tmp/image.tar is a tar file"
+            echo "Scanning image $IMAGE"
+            docker run --rm -v ./res:/res -v /tmp:/data -e CHKP_CLOUDGUARD_ID=$CHKP_CLOUDGUARD_ID -e CHKP_CLOUDGUARD_SECRET=$CHKP_CLOUDGUARD_SECRET -e SHIFTLEFT_REGION=$SHIFTLEFT_REGION -e SHIFTLEFT_ENV=$SHIFTLEFT_ENV checkpoint/shiftleft:latest_v2 shiftleft -D image-scan -j -i /data/image.tar -e $SHIFTLEFT_ENV -o /res/scan.json
+
+            IMAGEID=$(curl -s --unix-socket /var/run/docker.sock -X GET "http://localhost/images/$IMAGE/json" | jq -r '.Id')
+            if [[ $IMAGEID == sha256:* ]]; then
+                echo "IMAGEID is valid"
+            else
+                echo "IMAGEID is invalid"
+            fi
+
+            scanResults
+
+            imageLink $IMAGEID
+        fi 
     fi
-
-    scanResults
-
-    imageLink $IMAGEID
 }
 
 # scan_image ubuntu:latest
