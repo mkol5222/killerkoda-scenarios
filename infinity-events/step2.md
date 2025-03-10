@@ -28,4 +28,4 @@ LOGQUERY=$(jq -n --arg FILTER "$filter" --arg START "$start_of_month" --arg END 
 
 # result
 echo $LOGQUERY | jq 
-```
+```{{exec}}

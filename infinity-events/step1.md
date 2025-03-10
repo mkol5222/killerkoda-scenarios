@@ -15,4 +15,4 @@ TOKEN=$(echo "$LOGINRESP" | jq -r .data.token)
 echo $TOKEN
 # it is JWT token, so we can decode it to see what is inside
 echo $TOKEN | cut -d. -f2 | base64 -d | jq
-```
+```{{exec}}
