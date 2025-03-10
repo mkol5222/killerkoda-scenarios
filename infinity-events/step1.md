@@ -5,7 +5,11 @@
 #  https://portal.checkpoint.com/dashboard/settings/api-keys
 export KEY=7de7b4390fb9421fbf1133024ab50aed
 export SECRET=e23d4fe4092f4ae3b1c3fb00a24a1f4d
+```{{exec}}
 
+Once KEY and SECRET are set for YOUR OWN tenant:
+
+```bash
 # login to the Infinity API
 LOGIN_PAYLOAD=$(jq -n --arg key $KEY --arg secret $SECRET '{"clientId":$key,"accessKey":$secret}')
 LOGINRESP=$(curl -s -X POST -H "Content-Type: application/json" -d "$LOGIN_PAYLOAD" https://cloudinfra-gw.portal.checkpoint.com/auth/external)
