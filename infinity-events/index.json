@@ -1,0 +1,21 @@
+{
+    "title": "[WIP] Infinity Events API",
+    "description": "deonstrate how to access Check Point Infinity Events logs using API",
+  
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "background.sh"
+      },
+      "steps": [
+        {
+          "title": "Step 1: Getting started",
+          "text": "step1.md"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu20.04"
+    }
+  }
+  
