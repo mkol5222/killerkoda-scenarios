@@ -15,6 +15,14 @@
         {
           "title": "Step 2: Build query",
           "text": "step2.md"
+        },
+        {
+          "title": "Step 3: Execute query",
+          "text": "step3.md"
+        },
+        {
+          "title": "Step 4: Check query (task) status",
+          "text": "step4.md"
         }
       ]
     },
