@@ -23,6 +23,10 @@
         {
           "title": "Step 4: Fetch data - first page",
           "text": "step4.md"
+        },
+        {
+          "title": "Step 5: Iterate rest of data",
+          "text": "step5.md"
         }
       ]
     },
