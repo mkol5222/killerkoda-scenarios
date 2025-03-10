@@ -12,7 +12,7 @@ LOGS=$(curl -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN
    -d "{\"taskId\":\"$TASKID\",\"pageToken\":\"$PAGETOKEN\"}")
 
 # show the data
-echo $LOGS | jq -r '.data.records[]' | less
+echo $LOGS | jq -r '.data.records[]'
 
 # we have got N records
 echo -n "Count: "; echo $LOGS | jq -r -c '.data.records[]' | wc -l
