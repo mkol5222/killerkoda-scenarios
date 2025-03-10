@@ -22,3 +22,37 @@ while true; do
 done
 
 ```{{exec}}
+
+"No more pahes" means that all data was fetched.
+Task state now should be done and there is list of all consumed log pages:
+
+```bash
+TASKID=$(echo $LOGQUERY_RES | jq -r .data.taskId)
+echo $TASKID
+
+LOGSTASK=$(curl -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" \
+        -s https://cloudinfra-gw.portal.checkpoint.com/app/laas-logs-api/api/logs_query/$TASKID)
+echo $LOGSTASK | jq .
+```{{exec}}
+
+Similar to output:
+```json
+{
+  "success": true,
+  "data": {
+    "state": "Done",
+    "pageTokens": [
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0IjoxfQ==",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0IjoxMDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0IjoyMDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0IjozMDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo0MDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo1MDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo2MDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo3MDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo4MDF9",
+      "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo5MDF9"
+    ]
+  }
+}
+```
