@@ -9,8 +9,12 @@
       },
       "steps": [
         {
-          "title": "Step 1: Getting started",
+          "title": "Step 1: Login to Infinity Events",
           "text": "step1.md"
+        },
+        {
+          "title": "Step 2: Build query",
+          "text": "step2.md"
         }
       ]
     },
