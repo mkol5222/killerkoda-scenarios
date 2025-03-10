@@ -23,13 +23,10 @@ done
 
 ```{{exec}}
 
-"No more pahes" means that all data was fetched.
-Task state now should be done and there is list of all consumed log pages:
+"No more pages" means that all data was fetched.
+Task state now should be `Done` and there is list of all consumed log pages:
 
 ```bash
-TASKID=$(echo $LOGQUERY_RES | jq -r .data.taskId)
-echo $TASKID
-
 LOGSTASK=$(curl -H 'Content-Type: application/json' -H "Authorization: Bearer $TOKEN" \
         -s https://cloudinfra-gw.portal.checkpoint.com/app/laas-logs-api/api/logs_query/$TASKID)
 echo $LOGSTASK | jq .
@@ -54,5 +51,19 @@ Similar to output:
       "eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo5MDF9"
     ]
   }
+}
+```
+
+Did you know that you can decode PAGETOKENS too? 
+
+```bash
+echo eyJyZXF1ZXN0SWQiOiJjNGM4Y2I2Yi0xMzI5LTQxZGQtYTlhNy04ODNhNmM0MzZkZjIiLCJwYWdlT2Zmc2V0Ijo3MDF9 | base64 -d | jq
+```{{exec}} 
+
+Sample (requestId is TASKID and there is offset of the page in number of records before):
+```json
+{
+  "requestId": "c4c8cb6b-1329-41dd-a9a7-883a6c436df2",
+  "pageOffset": 701
 }
 ```
