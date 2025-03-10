@@ -1,6 +1,6 @@
 {
     "title": "[WIP] Infinity Events API",
-    "description": "deonstrate how to access Check Point Infinity Events logs using API",
+    "description": "demonstrate how to access Check Point Infinity Events logs (e.g. WAF logs) using API",
   
     "details": {
       "intro": {
